@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://getpresented.co.uk/sitemap.xml
