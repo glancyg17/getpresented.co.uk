@@ -399,16 +399,23 @@
     .deck-hover-zone{
       display:block;
       position:absolute;
-      top:0;bottom:0;
-      width:15%;
+      top:0;bottom:28px;
+      width:120px;
       z-index:10;
-      cursor:none;
+      cursor:ew-resize;
     }
-    .deck-hover-left{left:0;}
-    .deck-hover-right{right:0;}
+    .deck-hover-left{left:0;background:linear-gradient(to right, rgba(247,243,236,0.5), transparent);}
+    .deck-hover-right{right:0;background:linear-gradient(to left, rgba(247,243,236,0.5), transparent);}
 
-    .deck{padding:20px 0 28px;margin:0;overflow:visible;flex-wrap:nowrap;}
-    .postcard{flex:0 0 31%;}
+    .deck{
+      padding:20px 24px 28px;
+      margin:0;
+      overflow-x:auto;
+      flex-wrap:nowrap;
+      scroll-snap-type:x mandatory;
+      gap:20px;
+    }
+    .postcard{flex:0 0 32%;}
 
     section{padding:72px 0;}
     .section-head h2{font-size:32px;}
@@ -726,11 +733,13 @@
     runDemoCycle();
   }
 
-  // Desktop carousel hover-scroll
-  // Left/right edge hover zones drive continuous scrolling — no arrows needed
-  // Guards: desktop pointer device only, respects prefers-reduced-motion
-  if(window.matchMedia('(min-width:860px) and (pointer:fine)').matches &&
-     !window.matchMedia('(prefers-reduced-motion:reduce)').matches){
+  // Desktop carousel hover-scroll — hover left/right edge to scroll
+  if(window.innerWidth >= 860 && !window.matchMedia("(prefers-reduced-motion:reduce)").matches){
+
+
+
+
+
 
     const deck      = document.getElementById('deck');
     const zoneLeft  = document.getElementById('deck-left');
