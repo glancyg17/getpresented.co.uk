@@ -395,27 +395,45 @@
     .hero .wrap{max-width:760px;}
     .phone-mock{max-width:320px;}
 
-    .deck-wrap{position:relative;}
-    .deck-hover-zone{
-      display:block;
-      position:absolute;
-      top:0;bottom:28px;
-      width:120px;
-      z-index:10;
-      cursor:ew-resize;
+    .deck-wrap{
+      position:relative;
+      width:100%;
     }
-    .deck-hover-left{left:0;background:linear-gradient(to right, rgba(247,243,236,0.5), transparent);}
-    .deck-hover-right{right:0;background:linear-gradient(to left, rgba(247,243,236,0.5), transparent);}
-
     .deck{
-      padding:20px 24px 28px;
-      margin:0;
-      overflow-x:auto;
+      display:flex;
       flex-wrap:nowrap;
-      scroll-snap-type:x mandatory;
       gap:20px;
+      overflow-x:scroll;
+      scroll-snap-type:x mandatory;
+      -webkit-overflow-scrolling:touch;
+      padding:20px 60px 12px;
+      margin:0;
+      width:100%;
+      box-sizing:border-box;
+      /* show scrollbar on desktop */
+      scrollbar-width:thin;
+      scrollbar-color:var(--rust) var(--line);
     }
-    .postcard{flex:0 0 32%;}
+    /* WebKit scrollbar styling */
+    .deck::-webkit-scrollbar{
+      display:block;
+      height:4px;
+    }
+    .deck::-webkit-scrollbar-track{
+      background:var(--line);
+      border-radius:2px;
+    }
+    .deck::-webkit-scrollbar-thumb{
+      background:var(--rust);
+      border-radius:2px;
+    }
+    .deck::-webkit-scrollbar-thumb:hover{
+      background:var(--rust-dark);
+    }
+    .postcard{
+      flex:0 0 340px;
+      scroll-snap-align:start;
+    }
 
     section{padding:72px 0;}
     .section-head h2{font-size:32px;}
@@ -497,8 +515,6 @@
   </div>
 
   <div class="deck-wrap">
-    <div class="deck-hover-zone deck-hover-left" id="deck-left"></div>
-    <div class="deck-hover-zone deck-hover-right" id="deck-right"></div>
     <div class="deck" id="deck">
     <a href="https://kennedyexecutivetravel.com" target="_blank" rel="noopener" class="postcard">
       <div class="pin"></div>
@@ -541,6 +557,7 @@
     </a>
   </div><!-- /deck -->
   </div><!-- /deck-wrap -->
+  <div class="deck-dots">
     <div class="dot active"></div>
     <div class="dot"></div>
     <div class="dot"></div>
@@ -733,38 +750,6 @@
     runDemoCycle();
   }
 
-  // Desktop carousel hover-scroll — hover left/right edge to scroll
-  if(window.innerWidth >= 860 && !window.matchMedia("(prefers-reduced-motion:reduce)").matches){
-
-
-
-
-
-
-    const deck      = document.getElementById('deck');
-    const zoneLeft  = document.getElementById('deck-left');
-    const zoneRight = document.getElementById('deck-right');
-    let   scrollRAF = null;
-    const SPEED     = 2.2; // px per frame
-
-    function startScroll(dir){
-      if(scrollRAF) return;
-      function step(){
-        deck.scrollLeft += dir * SPEED;
-        scrollRAF = requestAnimationFrame(step);
-      }
-      scrollRAF = requestAnimationFrame(step);
-    }
-
-    function stopScroll(){
-      if(scrollRAF){ cancelAnimationFrame(scrollRAF); scrollRAF = null; }
-    }
-
-    zoneLeft.addEventListener('mouseenter',  () => startScroll(-1));
-    zoneLeft.addEventListener('mouseleave',  stopScroll);
-    zoneRight.addEventListener('mouseenter', () => startScroll(1));
-    zoneRight.addEventListener('mouseleave', stopScroll);
-  }
 </script>
 
 </body>
