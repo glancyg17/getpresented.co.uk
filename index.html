@@ -395,6 +395,18 @@
     .hero .wrap{max-width:760px;}
     .phone-mock{max-width:320px;}
 
+    .deck-wrap{position:relative;}
+    .deck-hover-zone{
+      display:block;
+      position:absolute;
+      top:0;bottom:0;
+      width:15%;
+      z-index:10;
+      cursor:none;
+    }
+    .deck-hover-left{left:0;}
+    .deck-hover-right{right:0;}
+
     .deck{padding:20px 0 28px;margin:0;overflow:visible;flex-wrap:nowrap;}
     .postcard{flex:0 0 31%;}
 
@@ -477,7 +489,10 @@
     </div>
   </div>
 
-  <div class="deck">
+  <div class="deck-wrap">
+    <div class="deck-hover-zone deck-hover-left" id="deck-left"></div>
+    <div class="deck-hover-zone deck-hover-right" id="deck-right"></div>
+    <div class="deck" id="deck">
     <a href="https://kennedyexecutivetravel.com" target="_blank" rel="noopener" class="postcard">
       <div class="pin"></div>
       <div class="port-img" style="background:linear-gradient(135deg,#e0ddd6,#ccc8bc);display:flex;align-items:center;justify-content:center;font-family:'Space Mono',monospace;font-size:11px;color:var(--ink-soft);">Kennedy Executive Travel photo</div>
@@ -517,9 +532,8 @@
       </div>
       <div class="postcard-quote">"A site that actually reflects what the business is about."</div>
     </a>
-  </div>
-
-  <div class="deck-dots">
+  </div><!-- /deck -->
+  </div><!-- /deck-wrap -->
     <div class="dot active"></div>
     <div class="dot"></div>
     <div class="dot"></div>
@@ -710,6 +724,37 @@
     demoMeta.textContent = businesses[0].meta;
   } else {
     runDemoCycle();
+  }
+
+  // Desktop carousel hover-scroll
+  // Left/right edge hover zones drive continuous scrolling — no arrows needed
+  // Guards: desktop pointer device only, respects prefers-reduced-motion
+  if(window.matchMedia('(min-width:860px) and (pointer:fine)').matches &&
+     !window.matchMedia('(prefers-reduced-motion:reduce)').matches){
+
+    const deck      = document.getElementById('deck');
+    const zoneLeft  = document.getElementById('deck-left');
+    const zoneRight = document.getElementById('deck-right');
+    let   scrollRAF = null;
+    const SPEED     = 2.2; // px per frame
+
+    function startScroll(dir){
+      if(scrollRAF) return;
+      function step(){
+        deck.scrollLeft += dir * SPEED;
+        scrollRAF = requestAnimationFrame(step);
+      }
+      scrollRAF = requestAnimationFrame(step);
+    }
+
+    function stopScroll(){
+      if(scrollRAF){ cancelAnimationFrame(scrollRAF); scrollRAF = null; }
+    }
+
+    zoneLeft.addEventListener('mouseenter',  () => startScroll(-1));
+    zoneLeft.addEventListener('mouseleave',  stopScroll);
+    zoneRight.addEventListener('mouseenter', () => startScroll(1));
+    zoneRight.addEventListener('mouseleave', stopScroll);
   }
 </script>
 
