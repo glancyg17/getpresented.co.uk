@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Payment confirmed — getPresented.</title>
+<meta name="description" content="Your payment has been received. We'll be in touch shortly to get your site built.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="canonical" href="https://getpresented.co.uk/payment-confirmed/">
+<link rel="icon" type="image/png" sizes="512x512" href="https://getpresented.co.uk/assets/icons/favicon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://getpresented.co.uk/assets/icons/favicon.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://getpresented.co.uk/assets/icons/favicon.png">
+<link rel="apple-touch-icon" href="https://getpresented.co.uk/assets/icons/favicon.png">
+<link rel="shortcut icon" type="image/png" href="https://getpresented.co.uk/assets/icons/favicon.png">
+<meta name="theme-color" content="#211D17">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F7F3EC;
+    --ink:#211D17;
+    --rust:#B5542E;
+    --rust-dark:#9A4423;
+    --green:#3D7A5C;
+    --line:#D8CFBC;
+    --card:#FAFAF8;
+    --ink-soft:#5C5648;
+    --max:1180px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Inter',sans-serif;
+    -webkit-font-smoothing:antialiased;
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+  }
+  a{color:inherit;text-decoration:none;}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 20px;}
+  h1,h2,h3{font-family:'Fraunces',serif;font-weight:600;letter-spacing:-0.01em;line-height:1.1;}
+  .mono{font-family:'Space Mono',monospace;}
+
+  nav{border-bottom:1px solid var(--line);}
+  .navrow{
+    display:flex;align-items:center;
+    padding:14px 20px;
+    max-width:var(--max);margin:0 auto;
+  }
+  .logo{font-family:'Fraunces',serif;font-weight:600;font-size:20px;text-decoration:none;color:var(--ink);}
+  .logo span{color:var(--rust);}
+
+  main{flex:1;padding:44px 0 60px;}
+
+  /* Confirmed stamp */
+  .stamp{
+    width:56px;height:56px;
+    border:2.5px solid var(--green);
+    border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    margin-bottom:22px;
+    transform:rotate(-6deg);
+  }
+  .stamp svg{width:26px;height:26px;}
+
+  .eyebrow{
+    font-family:'Space Mono',monospace;
+    font-size:11px;letter-spacing:0.12em;text-transform:uppercase;
+    color:var(--rust);display:flex;align-items:center;gap:8px;
+    margin-bottom:12px;
+  }
+  .eyebrow::before{content:'';width:14px;height:1px;background:var(--rust);}
+
+  h1{font-size:28px;margin-bottom:12px;max-width:18ch;}
+  .lead{font-size:15.5px;color:var(--ink-soft);line-height:1.6;max-width:46ch;margin-bottom:32px;}
+
+  /* What happens next */
+  .next-card{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:6px;
+    padding:22px 20px;
+    margin-bottom:20px;
+  }
+  .next-card h3{
+    font-family:'Space Mono',monospace;
+    font-size:10.5px;text-transform:uppercase;letter-spacing:0.06em;
+    color:var(--ink-soft);margin-bottom:14px;
+  }
+  .next-list{display:flex;flex-direction:column;gap:14px;}
+  .next-item{display:flex;gap:12px;align-items:flex-start;}
+  .next-num{font-family:'Space Mono',monospace;font-size:12px;color:var(--rust);flex-shrink:0;margin-top:2px;}
+  .next-item p{font-size:13.5px;color:var(--ink-soft);line-height:1.5;}
+  .next-item strong{color:var(--ink);}
+
+  /* Asset prompt */
+  .asset-card{
+    background:var(--ink);
+    color:var(--paper);
+    border-radius:6px;
+    padding:22px 20px;
+    margin-bottom:20px;
+  }
+  .asset-card h2{font-size:16px;color:var(--paper);margin-bottom:6px;}
+  .asset-card p{font-size:13.5px;color:#C9C2B0;line-height:1.55;margin-bottom:12px;}
+  .email-tag{
+    display:inline-block;
+    font-family:'Space Mono',monospace;
+    font-size:12.5px;color:var(--paper);
+    background:rgba(247,243,236,0.1);
+    padding:8px 12px;border-radius:3px;
+    border:1px solid rgba(247,243,236,0.2);
+  }
+
+  /* Hosting CTA */
+  .home-link{
+    font-family:'Space Mono',monospace;
+    font-size:12.5px;color:var(--ink-soft);
+    display:inline-flex;align-items:center;gap:6px;
+  }
+
+  footer{border-top:1px solid var(--line);padding:24px 0;}
+  .footer-bottom{
+    font-size:11px;color:var(--ink-soft);
+    font-family:'Space Mono',monospace;
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;
+    max-width:var(--max);margin:0 auto;padding:0 20px;
+  }
+
+  @media(min-width:860px){
+    h1{font-size:36px;}
+    .lead{font-size:17px;}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="navrow">
+    <a href="/" class="logo">getPresented<span>.</span></a>
+  </div>
+</nav>
+
+<main>
+  <div class="wrap" style="max-width:640px;">
+
+    <div class="stamp">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M4 12.5L9.5 18L20 6" stroke="#3D7A5C" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+
+    <div class="eyebrow">Payment confirmed</div>
+    <h1>You're on your way.</h1>
+    <p class="lead">Payment received — we'll be in touch shortly to get things moving.</p>
+
+    <div class="next-card">
+      <h3 class="mono">What happens next</h3>
+      <div class="next-list">
+        <div class="next-item">
+          <span class="next-num">01</span>
+          <p><strong>We'll be in touch</strong> — usually within a few hours to confirm we have everything we need.</p>
+        </div>
+        <div class="next-item">
+          <span class="next-num">02</span>
+          <p><strong>We build your site</strong> — designed around your business, not a template. Live within 7 days, usually faster.</p>
+        </div>
+        <div class="next-item">
+          <span class="next-num">03</span>
+          <p><strong>You check it over</strong> — we'll send you a preview link before anything goes live.</p>
+        </div>
+        <div class="next-item">
+          <span class="next-num">04</span>
+          <p><strong>It goes live</strong> — findable on Google, ready for customers.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="asset-card">
+      <h2>Haven't sent your logo or photos yet?</h2>
+      <p>If you haven't already, send them over now — JPG or PNG, phone photos are fine. It means we can get started without any delay.</p>
+      <div class="email-tag">hello@getpresented.co.uk</div>
+    </div>
+
+    <a href="/" class="home-link">← Back to homepage</a>
+
+  </div>
+</main>
+
+<footer>
+  <div class="footer-bottom">
+    <span>getPresented.</span>
+    <span>hello@getpresented.co.uk</span>
+  </div>
+</footer>
+
+</body>
+</html>
