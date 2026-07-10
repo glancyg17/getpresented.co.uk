@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bespoke business systems — getPresented.</title>
+<meta name="description" content="Booking, dispatch and admin systems built around how your business actually works — not off-the-shelf software. Quoted individually.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://getpresented.co.uk/solutions/">
+<link rel="icon" type="image/png" href="/assets/icons/favicon.png">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://getpresented.co.uk/solutions/">
+<meta property="og:title" content="Bespoke business systems — getPresented.">
+<meta property="og:description" content="Booking, dispatch and admin systems built around how your business actually works — not off-the-shelf software.">
+<meta property="og:image" content="https://getpresented.co.uk/assets/images/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="getPresented.">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Bespoke business systems — getPresented.">
+<meta name="twitter:description" content="Booking, dispatch and admin systems built around how your business actually works — not off-the-shelf software.">
+<meta name="twitter:image" content="https://getpresented.co.uk/assets/images/og-image.jpg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F7F3EC;
+    --ink:#211D17;
+    --rust:#B5542E;
+    --rust-dark:#9A4423;
+    --green:#3D7A5C;
+    --line:#D8CFBC;
+    --card:#FAFAF8;
+    --ink-soft:#5C5648;
+    --max:1180px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Inter',sans-serif;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  a{color:inherit;text-decoration:none;}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 20px;}
+  .narrow{max-width:640px;margin:0 auto;padding:0 20px;}
+
+  h1,h2,h3{font-family:'Fraunces',serif;font-weight:600;letter-spacing:-0.01em;line-height:1.14;}
+  .mono{font-family:'Space Mono',monospace;}
+  .eyebrow{
+    font-family:'Space Mono',monospace;
+    font-size:11px;
+    letter-spacing:0.12em;
+    text-transform:uppercase;
+    color:var(--rust);
+    display:flex;align-items:center;gap:8px;
+    justify-content:center;
+  }
+  .eyebrow::before{content:'';width:14px;height:1px;background:var(--rust);}
+
+  .prose{font-size:15.5px;line-height:1.7;color:var(--ink-soft);}
+  .prose strong{color:var(--ink);font-weight:600;}
+
+  /* ---------- NAV ---------- */
+  nav{border-bottom:1px solid var(--line);}
+  .navrow{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:14px 20px;
+    max-width:var(--max);margin:0 auto;
+  }
+  .logo{font-family:'Fraunces',serif;font-weight:600;font-size:20px;text-decoration:none;color:var(--ink);}
+  .logo span{color:var(--rust);}
+  .navback{font-family:'Space Mono',monospace;font-size:12px;color:var(--ink-soft);}
+
+  /* ---------- HERO ---------- */
+  .s-hero{padding:52px 0 8px;text-align:center;}
+  .s-hero h1{font-size:32px;margin:14px 0 16px;}
+  .s-hero p{font-size:16px;line-height:1.65;color:var(--ink-soft);max-width:52ch;margin:0 auto;}
+
+  /* ---------- DASHBOARD DEMO ---------- */
+  .demo-section{padding:40px 0 8px;}
+  .board-mock{
+    background:var(--ink);
+    border-radius:18px;
+    padding:8px;
+    max-width:340px;
+    margin:0 auto;
+    box-shadow:0 16px 40px rgba(33,29,23,0.22);
+  }
+  .board-screen{
+    background:var(--paper);
+    border-radius:12px;
+    padding:16px 16px 18px;
+    position:relative;
+    min-height:238px;
+    overflow:hidden;
+  }
+  .board-head{
+    display:flex;align-items:center;justify-content:space-between;
+    margin-bottom:12px;
+  }
+  .board-head .b-title{font-family:'Space Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.06em;color:var(--ink-soft);}
+  .board-head .b-dot{width:6px;height:6px;border-radius:50%;background:var(--line);}
+  .board-head .b-dot.live{background:var(--rust);}
+
+  .b-toast{
+    position:absolute;
+    top:-70px;left:8px;right:8px;
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:8px;
+    padding:9px 11px;
+    box-shadow:0 6px 16px rgba(33,29,23,0.12);
+    transition:top .5s cubic-bezier(.4,0,.2,1), opacity .4s ease;
+    opacity:0;
+    z-index:3;
+  }
+  .b-toast.show{top:8px;opacity:1;}
+  .b-toast .b-toast-lbl{font-family:'Space Mono',monospace;font-size:9px;color:var(--rust);text-transform:uppercase;letter-spacing:.05em;margin-bottom:3px;}
+  .b-toast .b-toast-msg{font-size:11.5px;color:var(--ink);}
+
+  .b-card{
+    border:1px solid var(--line);
+    border-radius:9px;
+    padding:12px 13px;
+    background:var(--card);
+    opacity:0;
+    transform:translateY(8px);
+    transition:opacity .4s ease, transform .4s ease, border-color .4s ease;
+    position:relative;
+  }
+  .b-card.show{opacity:1;transform:translateY(0);}
+  .b-card.confirmed{border-color:var(--green);}
+  .b-card-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:4px;}
+  .b-card-job{font-family:'Fraunces',serif;font-weight:600;font-size:13.5px;}
+  .b-status-dot{width:7px;height:7px;border-radius:50%;background:#E0A756;transition:background .4s ease;flex-shrink:0;}
+  .b-status-dot.assigned{background:var(--rust);}
+  .b-status-dot.confirmed{background:var(--green);}
+  .b-card-sub{font-size:11px;color:var(--ink-soft);transition:color .3s ease;}
+
+  .b-rows{
+    max-height:0;
+    overflow:hidden;
+    transition:max-height .4s ease, margin .4s ease;
+    margin-top:0;
+  }
+  .b-rows.show{max-height:80px;margin-top:9px;}
+  .b-row{
+    display:flex;align-items:center;justify-content:space-between;
+    font-size:10.5px;
+    padding:6px 8px;
+    border:1px solid var(--line);
+    border-radius:6px;
+    margin-top:5px;
+    color:var(--ink-soft);
+    background:var(--paper);
+    transition:border-color .25s ease, background .25s ease, opacity .25s ease;
+  }
+  .b-row.busy{opacity:.45;text-decoration:line-through;}
+  .b-row.pick{border-color:var(--rust);color:var(--ink);background:rgba(181,84,46,0.06);}
+
+  .b-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px;min-height:0;}
+  .b-tag{
+    font-family:'Space Mono',monospace;
+    font-size:9px;
+    padding:4px 8px;
+    border-radius:20px;
+    border:1px solid var(--line);
+    color:var(--ink-soft);
+    opacity:0;
+    transform:translateY(4px);
+    transition:opacity .35s ease, transform .35s ease;
+  }
+  .b-tag.show{opacity:1;transform:translateY(0);}
+  .b-tag.green{color:var(--green);border-color:var(--green);}
+
+  .b-bubble{
+    position:absolute;
+    right:-220px;bottom:14px;
+    max-width:190px;
+    background:var(--ink);
+    color:var(--paper);
+    font-size:10.5px;
+    line-height:1.5;
+    padding:9px 11px;
+    border-radius:10px 10px 2px 10px;
+    transition:right .5s cubic-bezier(.4,0,.2,1);
+    z-index:2;
+  }
+  .b-bubble.show{right:8px;}
+  .b-bubble .b-bubble-lbl{font-family:'Space Mono',monospace;font-size:8px;color:#D9B896;text-transform:uppercase;letter-spacing:.05em;margin-bottom:3px;}
+
+  .b-cursor{
+    position:absolute;
+    top:0;left:0;
+    opacity:0;
+    transition:left .8s cubic-bezier(.4,0,.2,1), top .8s cubic-bezier(.4,0,.2,1), opacity .3s ease;
+    z-index:5;
+    filter:drop-shadow(0 2px 3px rgba(0,0,0,0.25));
+  }
+  .b-cursor.show{opacity:1;}
+  .b-cursor.click{animation:cursorClick .25s ease;}
+  @keyframes cursorClick{0%{transform:scale(1);}50%{transform:scale(0.8);}100%{transform:scale(1);}}
+
+  .demo-caption{
+    text-align:center;
+    font-family:'Space Mono',monospace;
+    font-size:11px;
+    color:var(--ink-soft);
+    margin-top:18px;
+  }
+
+  /* ---------- EXPLAIN ---------- */
+  .s-explain{padding:56px 0 8px;}
+  .section-head{text-align:center;margin-bottom:20px;}
+  .section-head h2{font-size:24px;margin-top:8px;}
+  .s-explain .prose{max-width:56ch;margin:0 auto;text-align:center;}
+
+  /* ---------- FINAL CTA ---------- */
+  .final-cta{padding:60px 0 70px;text-align:center;}
+  .final-cta h2{font-size:24px;margin-bottom:10px;}
+  .final-cta p{color:var(--ink-soft);margin-bottom:22px;font-size:15px;}
+  .btn-primary{
+    display:inline-block;
+    background:var(--rust);
+    color:var(--paper);
+    font-family:'Space Mono',monospace;
+    font-size:13px;
+    text-align:center;
+    padding:16px 22px;
+    border-radius:4px;
+    border:1px solid var(--rust-dark);
+    box-shadow:0 2px 0 var(--rust-dark);
+    transition:transform .15s ease;
+  }
+  .btn-primary:active{transform:translateY(2px);box-shadow:none;}
+
+  footer{border-top:1px solid var(--line);padding:26px 0;}
+  .footer-bottom{
+    max-width:var(--max);margin:0 auto;padding:0 20px;
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;
+    font-family:'Space Mono',monospace;font-size:11px;color:var(--ink-soft);
+  }
+
+  @media(prefers-reduced-motion: reduce){
+    .b-toast,.b-card,.b-rows,.b-row,.b-tag,.b-bubble,.b-cursor{transition:none !important;}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="navrow">
+    <a href="/" class="logo">getPresented<span>.</span></a>
+    <a href="/" class="navback">← Websites</a>
+  </div>
+</nav>
+
+<header class="s-hero">
+  <div class="narrow">
+    <div class="eyebrow">Beyond the website</div>
+    <h1>Software built around how you actually work</h1>
+    <p>Some businesses run on more than a homepage — bookings, staff or kit that need juggling, deposits to chase, dates that can't be missed. This is that: built from scratch, around your business specifically.</p>
+  </div>
+</header>
+
+<section class="demo-section">
+  <div class="wrap">
+    <div class="board-mock">
+      <div class="board-screen">
+        <div class="board-head">
+          <span class="b-title">Today</span>
+          <span class="b-dot live" id="b-livedot"></span>
+        </div>
+
+        <div class="b-toast" id="b-toast">
+          <div class="b-toast-lbl">New enquiry</div>
+          <div class="b-toast-msg" id="b-toast-msg">—</div>
+        </div>
+
+        <div class="b-card" id="b-card">
+          <div class="b-card-top">
+            <span class="b-card-job" id="b-job">—</span>
+            <span class="b-status-dot" id="b-dot"></span>
+          </div>
+          <div class="b-card-sub" id="b-sub">Unassigned</div>
+
+          <div class="b-rows" id="b-rows">
+            <div class="b-row busy" id="b-row1">—</div>
+            <div class="b-row" id="b-row2">—</div>
+          </div>
+
+          <div class="b-tags" id="b-tags"></div>
+        </div>
+
+        <div class="b-bubble" id="b-bubble">
+          <div class="b-bubble-lbl">WhatsApp — sent</div>
+          <div id="b-bubble-msg">—</div>
+        </div>
+
+        <svg class="b-cursor" id="b-cursor" width="18" height="18" viewBox="0 0 18 18" fill="none">
+          <path d="M2 1L2 15L6 11.5L8.5 16L10.5 15L8 10.5L13 10.5L2 1Z" fill="#F7F3EC" stroke="#211D17" stroke-width="1"/>
+        </svg>
+      </div>
+    </div>
+    <p class="demo-caption">An illustrative example — yours would be shaped around your own business, not this one.</p>
+  </div>
+</section>
+
+<section class="s-explain">
+  <div class="narrow">
+    <div class="section-head">
+      <div class="eyebrow">Not off-the-shelf</div>
+      <h2>The kind of thing this solves</h2>
+    </div>
+    <p class="prose">If you're double-booking staff or vehicles because there's no single place to check what's on, chasing deposits and balances from memory, missing a renewal date because nobody flagged it, or writing the same quote out by hand every time — that's the kind of friction we build our way around. No two of these look the same, because no two businesses run the same way.</p>
+  </div>
+</section>
+
+<section class="final-cta">
+  <div class="narrow">
+    <h2>Worth a conversation?</h2>
+    <p>Tell us what's slowing you down and we'll figure out together if it's worth building.</p>
+    <a href="https://wa.me/447301222435" class="btn-primary">Tell us what's slowing you down →</a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-bottom">
+    <span>getPresented.</span>
+    <span>hello@getpresented.co.uk</span>
+  </div>
+</footer>
+
+<script>
+  const scenarios = [
+    { job:'Airport pickup', when:'Sat 14th', toast:'Are you free Sat 14th for an airport run?', busyLabel:'Driver A — booked 2pm', freeLabel:'Driver B — free', quote:'Deposit £40, balance on the day. All set for Sat.' },
+    { job:'Boiler service', when:'Tue 10am', toast:'Can someone come out Tuesday morning?', busyLabel:'Engineer 1 — booked 10am', freeLabel:'Engineer 2 — free', quote:'Call-out £35, remainder on completion. See you Tues.' },
+    { job:'Colour & cut', when:'Thu 2pm', toast:'Any slots free Thursday afternoon?', busyLabel:'Chair 1 — booked 2pm', freeLabel:'Chair 2 — free', quote:'£15 deposit holds the slot. Booked for Thu.' },
+    { job:'Wedding shoot', when:'Sat 21st', toast:'Are you available Sat 21st for a wedding?', busyLabel:'Lead shooter — booked', freeLabel:'Second shooter — free', quote:'£100 deposit, balance two weeks prior. Confirmed.' }
+  ];
+  let sIndex = 0;
+
+  const toast = document.getElementById('b-toast');
+  const toastMsg = document.getElementById('b-toast-msg');
+  const card = document.getElementById('b-card');
+  const jobEl = document.getElementById('b-job');
+  const dot = document.getElementById('b-dot');
+  const sub = document.getElementById('b-sub');
+  const rows = document.getElementById('b-rows');
+  const row1 = document.getElementById('b-row1');
+  const row2 = document.getElementById('b-row2');
+  const tags = document.getElementById('b-tags');
+  const bubble = document.getElementById('b-bubble');
+  const bubbleMsg = document.getElementById('b-bubble-msg');
+  const cursor = document.getElementById('b-cursor');
+  const screen = document.querySelector('.board-screen');
+
+  function wait(ms){ return new Promise(res => setTimeout(res, ms)); }
+
+  function addTag(text, green){
+    const t = document.createElement('span');
+    t.className = 'b-tag' + (green ? ' green' : '');
+    t.textContent = text;
+    tags.appendChild(t);
+    requestAnimationFrame(() => t.classList.add('show'));
+  }
+
+  function moveCursorTo(targetEl){
+    const screenRect = screen.getBoundingClientRect();
+    const targetRect = targetEl.getBoundingClientRect();
+    const x = targetRect.left - screenRect.left + targetRect.width / 2 - 9;
+    const y = targetRect.top - screenRect.top + targetRect.height / 2 - 9;
+    cursor.style.left = x + 'px';
+    cursor.style.top = y + 'px';
+  }
+
+  async function runCycle(){
+    const s = scenarios[sIndex % scenarios.length];
+    sIndex++;
+
+    // reset
+    toast.classList.remove('show');
+    card.classList.remove('show','confirmed');
+    rows.classList.remove('show');
+    row1.classList.remove('busy'); row2.classList.remove('pick');
+    tags.innerHTML = '';
+    bubble.classList.remove('show');
+    cursor.classList.remove('show','click');
+    dot.className = 'b-status-dot';
+    sub.textContent = 'Unassigned';
+    jobEl.textContent = s.job;
+
+    await wait(600);
+
+    // toast: new enquiry
+    toastMsg.textContent = s.toast;
+    toast.classList.add('show');
+    await wait(1500);
+    toast.classList.remove('show');
+    await wait(400);
+
+    // job card appears
+    sub.textContent = s.when + ' · Unassigned';
+    card.classList.add('show');
+    await wait(900);
+
+    // show resourcing rows
+    row1.textContent = s.busyLabel;
+    row1.classList.add('busy');
+    row2.textContent = s.freeLabel;
+    rows.classList.add('show');
+    await wait(700);
+
+    // cursor clicks the free row
+    cursor.style.left = '10px'; cursor.style.top = '10px';
+    cursor.classList.add('show');
+    await wait(350);
+    moveCursorTo(row2);
+    await wait(750);
+    cursor.classList.add('click');
+    row2.classList.add('pick');
+    await wait(200);
+    cursor.classList.remove('click');
+    await wait(500);
+    cursor.classList.remove('show');
+
+    // assigned
+    rows.classList.remove('show');
+    dot.classList.add('assigned');
+    sub.textContent = s.when + ' · Assigned';
+    addTag('No clash');
+    await wait(1000);
+
+    // whatsapp bubble sends quote
+    bubbleMsg.textContent = s.quote;
+    bubble.classList.add('show');
+    await wait(1600);
+    bubble.classList.remove('show');
+    await wait(400);
+
+    // confirmed
+    card.classList.add('confirmed');
+    dot.classList.add('confirmed');
+    sub.textContent = s.when + ' · Confirmed';
+    addTag('Deposit paid', true);
+    await wait(300);
+    addTag('Reminder set');
+
+    await wait(3400);
+    runCycle();
+  }
+
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if(prefersReducedMotion){
+    const s = scenarios[0];
+    jobEl.textContent = s.job;
+    sub.textContent = s.when + ' · Confirmed';
+    card.classList.add('show','confirmed');
+    dot.classList.add('confirmed');
+    addTag('No clash');
+    addTag('Deposit paid', true);
+    addTag('Reminder set');
+  } else {
+    runCycle();
+  }
+</script>
+
+</body>
+</html>
