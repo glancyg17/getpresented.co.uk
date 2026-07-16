@@ -481,6 +481,23 @@
     .demo-btn{transition:opacity .2s ease;}
   }
 </style>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '866982179477687');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=866982179477687&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
 </head>
 <body>
 
@@ -657,7 +674,7 @@
     </div>
     <p class="prose">Every one of these looks different once we get into it — best to just talk it through.</p>
     <div style="margin-top:18px;display:flex;gap:14px;flex-wrap:wrap;align-items:center;">
-      <a href="https://wa.me/447301222435" class="btn-secondary" style="display:inline-block;">Tell us what's slowing you down →</a>
+      <a href="https://wa.me/447301222435" class="btn-secondary" style="display:inline-block;" target="_blank" rel="noopener" onclick="if(window.fbq){fbq('track','Lead');}">Tell us what's slowing you down →</a>
       <a href="/solutions/" class="mono" style="font-size:12px;color:var(--ink-soft);text-decoration:underline;text-underline-offset:3px;">See an example ↓</a>
     </div>
   </div>
@@ -676,7 +693,7 @@
         <h3>Want to ask something first?</h3>
         <p>Drop us a WhatsApp — it's Glancy who answers, usually within the hour.</p>
       </div>
-      <a href="https://wa.me/447301222435" class="btn-primary">WhatsApp</a>
+      <a href="https://wa.me/447301222435" class="btn-primary" target="_blank" rel="noopener" onclick="if(window.fbq){fbq('track','Lead');}">WhatsApp</a>
     </div>
   </div>
 </section>
