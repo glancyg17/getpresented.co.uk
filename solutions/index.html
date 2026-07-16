@@ -254,6 +254,23 @@
     .b-toast,.b-card,.b-rows,.b-row,.b-tag,.b-bubble,.b-cursor{transition:none !important;}
   }
 </style>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '866982179477687');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=866982179477687&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
 </head>
 <body>
 
@@ -329,7 +346,7 @@
   <div class="narrow">
     <h2>Worth a conversation?</h2>
     <p>Tell us what's slowing you down and we'll figure out together if it's worth building.</p>
-    <a href="https://wa.me/447301222435" class="btn-primary">Tell us what's slowing you down →</a>
+    <a href="https://wa.me/447301222435" class="btn-primary" target="_blank" rel="noopener" onclick="if(window.fbq){fbq('track','Lead');}">Tell us what's slowing you down →</a>
   </div>
 </section>
 
