@@ -12,6 +12,7 @@ Get Presented. is a UK-based web design service that builds simple, fast, mobile
 - Hosting & maintenance — £10/month, first month included free
 - Domain registration and setup handled on the client's behalf
 - Contact form, business listing details, services, prices, and hours included as standard
+- Branding & marketing add-ons — standalone, fixed-price, buyable online at /branding/: Starter Identity (logo, palette, type, business card) from £50, Social Identity (WhatsApp/social/flyer/QR kit) £50, Full Identity £75, Menu Design £35. Also available bundled with a new site build.
 
 ## Who this is for
 

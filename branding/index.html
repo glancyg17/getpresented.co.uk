@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>
+(function(){
+  if (window.location.hostname === 'glancyg17.github.io') {
+    window.location.replace('https://getpresented.co.uk' + window.location.pathname + window.location.search + window.location.hash);
+  }
+})();
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Branding &amp; Marketing — getPresented.</title>
+<meta name="description" content="Logo design, business cards, social kits and print marketing for UK small businesses — from £35.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://getpresented.co.uk/branding/">
+<link rel="icon" type="image/png" href="/assets/icons/favicon.png">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://getpresented.co.uk/branding/">
+<meta property="og:title" content="Branding &amp; Marketing — getPresented.">
+<meta property="og:description" content="Logo design, business cards, social kits and print marketing for UK small businesses — from £35.">
+<meta property="og:image" content="https://getpresented.co.uk/assets/images/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="getPresented.">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Branding &amp; Marketing — getPresented.">
+<meta name="twitter:description" content="Logo design, business cards, social kits and print marketing for UK small businesses — from £35.">
+<meta name="twitter:image" content="https://getpresented.co.uk/assets/images/og-image.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F7F3EC;
+    --ink:#211D17;
+    --rust:#B5542E;
+    --rust-dark:#9A4423;
+    --green:#3D7A5C;
+    --line:#D8CFBC;
+    --card:#FAFAF8;
+    --ink-soft:#5C5648;
+    --max:1180px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Inter',sans-serif;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  img{max-width:100%;display:block;}
+  a{color:inherit;text-decoration:none;}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 20px;}
+
+  h1,h2,h3{font-family:'Fraunces',serif;font-weight:600;letter-spacing:-0.01em;line-height:1.08;}
+  .mono{font-family:'Space Mono',monospace;}
+  .eyebrow{
+    font-family:'Space Mono',monospace;
+    font-size:11px;
+    letter-spacing:0.12em;
+    text-transform:uppercase;
+    color:var(--rust);
+    display:flex;align-items:center;gap:8px;
+  }
+  .eyebrow::before{content:'';width:14px;height:1px;background:var(--rust);}
+
+  /* ---------- NAV ---------- */
+  nav{
+    position:sticky;top:0;z-index:50;
+    background:rgba(247,243,236,0.92);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  .navrow{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:14px 20px;
+    max-width:var(--max);margin:0 auto;
+  }
+  .logo{font-family:'Fraunces',serif;font-weight:600;font-size:20px;text-decoration:none;color:var(--ink);}
+  .logo span{color:var(--rust);}
+  .nav-cta{
+    font-family:'Space Mono',monospace;
+    font-size:12px;
+    background:var(--ink);
+    color:var(--paper);
+    padding:10px 16px;
+    border-radius:3px;
+    white-space:nowrap;
+  }
+  .nav-links{display:none;}
+
+  /* ---------- HERO ---------- */
+  .page-hero{padding:40px 0 8px;}
+  .page-hero .eyebrow{margin-bottom:14px;}
+  .page-hero h1{font-size:30px;max-width:16ch;margin-bottom:14px;}
+  .page-hero h1 em{font-style:normal;color:var(--rust);}
+  .page-hero p{font-size:15.5px;color:var(--ink-soft);line-height:1.6;max-width:52ch;}
+
+  /* ---------- SECTIONS ---------- */
+  section{padding:36px 0;}
+  .section-head{margin-bottom:22px;}
+  .section-head .eyebrow{margin-bottom:8px;}
+  .section-head h2{font-size:23px;}
+  .section-head p{font-size:14px;color:var(--ink-soft);max-width:46ch;margin-top:8px;line-height:1.55;}
+
+  /* ---------- PRODUCT GRID ---------- */
+  .product-grid{display:grid;grid-template-columns:1fr;gap:16px;}
+  .product-card{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:6px;
+    padding:22px 20px;
+    display:flex;flex-direction:column;
+  }
+  .product-card h3{font-size:18px;margin-bottom:4px;}
+  .product-card .price{
+    font-family:'Space Mono',monospace;
+    font-size:14px;
+    color:var(--rust);
+    margin-bottom:12px;
+  }
+  .product-card .contents{
+    font-size:13.5px;
+    color:var(--ink-soft);
+    line-height:1.55;
+    margin-bottom:20px;
+  }
+  .product-card .cta-row{margin-top:auto;}
+  .buy-btn{
+    display:block;
+    background:var(--rust);
+    color:var(--paper);
+    font-family:'Space Mono',monospace;
+    font-size:13px;
+    text-align:center;
+    padding:14px 18px;
+    border-radius:4px;
+    border:1px solid var(--rust-dark);
+    box-shadow:0 2px 0 var(--rust-dark);
+    transition:transform .15s ease;
+  }
+  .buy-btn:active{transform:translateY(2px);box-shadow:none;}
+
+  /* ---------- BUNDLES ---------- */
+  .bundles{border-top:1px solid var(--line);}
+  .bundle-grid{display:grid;grid-template-columns:1fr;gap:16px;}
+  .bundle-card{
+    background:var(--paper);
+    border:1px solid var(--ink);
+    border-radius:6px;
+    padding:22px 20px;
+    display:flex;flex-direction:column;
+  }
+  .bundle-card .tag{
+    font-family:'Space Mono',monospace;
+    font-size:9.5px;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+    margin-bottom:10px;
+  }
+  .bundle-card h3{font-size:18px;margin-bottom:4px;}
+  .bundle-card .price{
+    font-family:'Space Mono',monospace;
+    font-size:13px;
+    color:var(--ink-soft);
+    margin-bottom:12px;
+  }
+  .bundle-card .contents{
+    font-size:13.5px;
+    color:var(--ink-soft);
+    line-height:1.55;
+    margin-bottom:20px;
+  }
+  .bundle-card .cta-row{margin-top:auto;}
+  .ask-btn{
+    display:block;
+    background:transparent;
+    color:var(--ink);
+    font-family:'Space Mono',monospace;
+    font-size:13px;
+    text-align:center;
+    padding:13px 18px;
+    border-radius:4px;
+    border:1px solid var(--ink);
+  }
+
+  /* ---------- WHATSAPP STRIP ---------- */
+  .talk-strip{
+    background:var(--ink);
+    color:var(--paper);
+    border-radius:6px;
+    padding:22px 22px;
+    display:flex;align-items:center;gap:14px;
+  }
+  .talk-icon{
+    width:40px;height:40px;border-radius:50%;
+    background:#25D366;
+    display:flex;align-items:center;justify-content:center;
+    flex-shrink:0;
+  }
+  .talk-strip h3{font-size:15.5px;color:var(--paper);margin-bottom:2px;}
+  .talk-strip p{font-size:12.5px;color:#C9C2B0;}
+  .talk-strip a.talk-cta{
+    margin-left:auto;flex-shrink:0;
+    font-family:'Space Mono',monospace;
+    font-size:12px;
+    background:var(--rust);
+    color:var(--paper);
+    padding:10px 14px;
+    border-radius:4px;
+    border:1px solid var(--rust-dark);
+    box-shadow:0 2px 0 var(--rust-dark);
+  }
+
+  /* ---------- FOOTER ---------- */
+  footer{
+    background:var(--ink);
+    color:var(--paper);
+    padding:40px 0 28px;
+    margin-top:20px;
+  }
+  footer .logo{color:var(--paper);}
+  footer .logo span{color:var(--rust);}
+  .footer-tag{font-size:13px;color:#A89F8C;margin-top:8px;max-width:32ch;}
+  .footer-links{display:flex;flex-direction:column;gap:8px;margin-top:24px;font-size:13px;}
+  .footer-bottom{margin-top:28px;padding-top:18px;border-top:1px solid #3A352B;font-size:11px;color:#7A7363;font-family:'Space Mono',monospace;}
+
+  /* ---------- DESKTOP ---------- */
+  @media(min-width:860px){
+    .nav-links{display:flex;gap:28px;font-size:14px;}
+    .page-hero{padding:64px 0 12px;}
+    .page-hero h1{font-size:44px;}
+    .page-hero p{font-size:17px;}
+    section{padding:56px 0;}
+    .section-head h2{font-size:30px;}
+    .product-grid{grid-template-columns:repeat(2,1fr);gap:20px;}
+    .bundle-grid{grid-template-columns:repeat(3,1fr);gap:20px;}
+  }
+</style>
+</head>
+<body>
+<!-- Cookie Consent (Meta Pixel) -->
+<div id="fp-consent" style="position:fixed;left:0;right:0;bottom:0;z-index:9999;display:none;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;background:#211D17;color:#F7F3EC;font-family:'Inter',sans-serif;font-size:12.5px;line-height:1.5;padding:12px 16px;box-shadow:0 -2px 10px rgba(0,0,0,.18);">
+  <span style="max-width:560px;">We use ad-measurement cookies (Meta Pixel) only if you accept. <a href="/privacy-policy/" style="color:#B5542E;">Privacy policy</a></span>
+  <span style="display:flex;gap:8px;">
+    <button id="fp-decline" style="background:transparent;border:1px solid #5C5648;color:#F7F3EC;padding:5px 12px;font-size:12px;border-radius:3px;cursor:pointer;font-family:inherit;">Decline</button>
+    <button id="fp-accept" style="background:#B5542E;border:1px solid #B5542E;color:#F7F3EC;padding:5px 12px;font-size:12px;border-radius:3px;cursor:pointer;font-family:inherit;">Accept</button>
+  </span>
+</div>
+<script>
+(function(){
+  function fpLoadPixel(){
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '866982179477687');
+    fbq('track', 'PageView');
+  }
+  var c = localStorage.getItem('fp_ad_consent');
+  var banner = document.getElementById('fp-consent');
+  if(c === 'granted'){
+    fpLoadPixel();
+  } else if(c !== 'denied' && banner){
+    banner.style.display = 'flex';
+  }
+  if(banner){
+    document.getElementById('fp-accept').addEventListener('click', function(){
+      localStorage.setItem('fp_ad_consent','granted');
+      banner.style.display = 'none';
+      fpLoadPixel();
+    });
+    document.getElementById('fp-decline').addEventListener('click', function(){
+      localStorage.setItem('fp_ad_consent','denied');
+      banner.style.display = 'none';
+    });
+  }
+})();
+</script>
+<!-- End Cookie Consent -->
+
+
+<nav>
+  <div class="navrow">
+    <a href="/" class="logo">getPresented<span>.</span></a>
+    <div class="nav-links">
+      <a href="/#work">Work</a>
+      <a href="/#process">How it works</a>
+      <a href="/branding">Branding</a>
+      <a href="/get-started">Get started</a>
+    </div>
+    <a href="/get-started" class="nav-cta">Build my site</a>
+  </div>
+</nav>
+
+<header class="page-hero">
+  <div class="wrap">
+    <div class="eyebrow">Beyond the website</div>
+    <h1>Look <em>properly branded</em>, not just properly online.</h1>
+    <p>Standalone add-ons — a logo, a social kit, a menu — with fixed prices and no quote needed. Buy the ones marked instant and we'll get started straight away. The site bundles further down still need a quick chat first.</p>
+  </div>
+</header>
+
+<section id="standalone">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Buy now, no conversation needed</div>
+      <h2>Standalone branding</h2>
+      <p>Fixed price, delivered fast. Pay and we'll be in touch to get the details.</p>
+    </div>
+
+    <div class="product-grid">
+
+      <div class="product-card">
+        <h3>Starter Identity</h3>
+        <div class="price">£50</div>
+        <p class="contents">Logo, colour palette, typography and favicon, plus a matching business card design. Everything you need to look properly branded, delivered fast.</p>
+        <div class="cta-row">
+          <a href="https://buy.stripe.com/00w5kCfOi3Mz1ha2wa9EI0h" class="buy-btn" onclick="if(window.fbq){fbq('track','InitiateCheckout');}">Buy now — £50</a>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <h3>Social Identity</h3>
+        <div class="price">£50</div>
+        <p class="contents">WhatsApp Business profile assets, email signature, social media images and banners, a flyer and a branded QR code — your whole online presence, sorted.</p>
+        <div class="cta-row">
+          <a href="https://buy.stripe.com/bJe6oG45Adn92le9YC9EI0i" class="buy-btn" onclick="if(window.fbq){fbq('track','InitiateCheckout');}">Buy now — £50</a>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <h3>Full Identity</h3>
+        <div class="price">£75</div>
+        <p class="contents">Starter Identity and Social Identity together — logo, business card, WhatsApp assets, email signature, social banners, flyer and QR code. The complete brand, one price.</p>
+        <div class="cta-row">
+          <a href="https://buy.stripe.com/eVq5kC59E5UH3pi4Ei9EI0j" class="buy-btn" onclick="if(window.fbq){fbq('track','InitiateCheckout');}">Buy now — £75</a>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <h3>Menu Design</h3>
+        <div class="price">£35</div>
+        <p class="contents">A clean, print-ready menu design for your business — any size, one flat price.</p>
+        <div class="cta-row">
+          <a href="https://buy.stripe.com/8x214mgSmgzlbVO2wa9EI0k" class="buy-btn" onclick="if(window.fbq){fbq('track','InitiateCheckout');}">Buy now — £35</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="bundles" class="bundles">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Building a new site? Add branding at the same time.</div>
+      <h2>Site bundles</h2>
+      <p>These pair a website build with a branding pack. Every site needs a bit of scoping first, so drop us a message and we'll take it from there.</p>
+    </div>
+
+    <div class="bundle-grid">
+
+      <div class="bundle-card">
+        <div class="tag">Site + branding</div>
+        <h3>Site + Starter Identity</h3>
+        <div class="price">£75 + £10/mo hosting from day 30</div>
+        <p class="contents">A simple website with hosting, plus your Starter Identity — logo, business card, palette, type and favicon.</p>
+        <div class="cta-row">
+          <a href="https://wa.me/447301222435?text=Hi%2C%20I%27m%20interested%20in%20the%20Site%20%2B%20Starter%20Identity%20bundle%20%28%C2%A375%2C%20plus%20%C2%A310%2Fmonth%20hosting%29%20%E2%80%94%20can%20you%20tell%20me%20more%3F" class="ask-btn" target="_blank" rel="noopener" onclick="if(window.fbq){fbq('track','Lead');}">Ask about this →</a>
+        </div>
+      </div>
+
+      <div class="bundle-card">
+        <div class="tag">Site + branding</div>
+        <h3>Site + Social Identity</h3>
+        <div class="price">£75 + £10/mo hosting from day 30</div>
+        <p class="contents">A simple website with hosting, plus your Social Identity — WhatsApp assets, email signature, social banners, flyer and QR code.</p>
+        <div class="cta-row">
+          <a href="https://wa.me/447301222435?text=Hi%2C%20I%27m%20interested%20in%20the%20Site%20%2B%20Social%20Identity%20bundle%20%28%C2%A375%2C%20plus%20%C2%A310%2Fmonth%20hosting%29%20%E2%80%94%20can%20you%20tell%20me%20more%3F" class="ask-btn" target="_blank" rel="noopener" onclick="if(window.fbq){fbq('track','Lead');}">Ask about this →</a>
+        </div>
+      </div>
+
+      <div class="bundle-card">
+        <div class="tag">Site + branding</div>
+        <h3>Properly Presented</h3>
+        <div class="price">£99 + £10/mo hosting from day 30</div>
+        <p class="contents">A simple website with hosting, plus your Full Identity — the logo, the print and the socials. Your business, online. Properly presented.</p>
+        <div class="cta-row">
+          <a href="https://wa.me/447301222435?text=Hi%2C%20I%27m%20interested%20in%20Properly%20Presented%20%28site%20%2B%20full%20identity%2C%20%C2%A399%20plus%20%C2%A310%2Fmonth%20hosting%29%20%E2%80%94%20can%20you%20tell%20me%20more%3F" class="ask-btn" target="_blank" rel="noopener" onclick="if(window.fbq){fbq('track','Lead');}">Ask about this →</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="talk">
+  <div class="wrap">
+    <div class="talk-strip">
+      <div class="talk-icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M17.6 6.32A8.86 8.86 0 0 0 11.94 4C7.03 4 3 8.03 3 12.94c0 1.62.43 3.2 1.24 4.59L3 21l3.56-1.2a8.92 8.92 0 0 0 4.38 1.15h.01c4.92 0 8.94-4.02 8.94-8.94a8.85 8.85 0 0 0-2.29-6.69Zm-5.65 13.77h-.01a7.4 7.4 0 0 1-3.78-1.04l-.27-.16-2.81.95.95-2.74-.18-.28a7.41 7.41 0 0 1-1.14-3.96c0-4.1 3.34-7.43 7.45-7.43a7.4 7.4 0 0 1 5.27 2.18 7.39 7.39 0 0 1 2.18 5.26c0 4.1-3.35 7.43-7.45 7.43Zm4.08-5.57c-.22-.11-1.32-.65-1.53-.73-.2-.07-.35-.11-.5.11-.15.22-.58.73-.71.88-.13.15-.26.16-.48.05-.22-.11-.93-.34-1.78-1.1-.66-.58-1.1-1.31-1.23-1.53-.13-.22-.01-.34.1-.45.1-.1.22-.26.33-.4.11-.13.15-.22.22-.37.07-.15.04-.28-.02-.39-.06-.11-.5-1.21-.69-1.65-.18-.43-.36-.37-.5-.38h-.43c-.15 0-.39.05-.59.28-.2.22-.78.76-.78 1.86 0 1.1.8 2.16.91 2.31.11.15 1.58 2.41 3.82 3.38.53.23.95.37 1.27.47.54.17 1.02.15 1.41.09.43-.06 1.32-.54 1.5-1.06.19-.52.19-.96.13-1.06-.06-.09-.2-.15-.42-.26Z" fill="#F7F3EC"/>
+        </svg>
+      </div>
+      <div>
+        <h3>Want to ask something first?</h3>
+        <p>Drop us a WhatsApp — it's Glancy who answers, usually within the hour.</p>
+      </div>
+      <a href="https://wa.me/447301222435" class="talk-cta" target="_blank" rel="noopener" onclick="if(window.fbq){fbq('track','Lead');}">WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <a href="/" class="logo">getPresented<span>.</span></a>
+    <p class="footer-tag">Websites for the people who make the UK run — one shopfront at a time.</p>
+    <div class="footer-links">
+      <a href="/privacy-policy">Privacy policy</a>
+      <a href="mailto:hello@getpresented.co.uk">hello@getpresented.co.uk</a>
+    </div>
+    <div class="footer-bottom mono">© 2026 getPresented. All rights reserved.</div>
+  </div>
+</footer>
+
+</body>
+</html>
