@@ -1,0 +1,5 @@
+# Keep internal docs out of the published site. (The repo itself is still readable on GitHub if it is public.)
+exclude:
+  - CLAUDE.md
+  - README.md
+  - docs

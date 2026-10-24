@@ -11,7 +11,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>getPresented. — Your business, online. Properly.</title>
-<meta name="description" content="Professional websites for UK tradespeople and small businesses. Built fast, priced fairly — from £50.">
+<meta name="description" content="Professional websites for UK tradespeople and small businesses — from £50, then £10 a month. Need a change? Just text us and it's updated.">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://getpresented.co.uk/">
 <link rel="icon" type="image/png" href="/assets/icons/favicon.png">
@@ -20,7 +20,7 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://getpresented.co.uk/">
 <meta property="og:title" content="getPresented. — Your business, online. Properly.">
-<meta property="og:description" content="Professional websites for UK tradespeople and small businesses. Built fast, priced fairly — from £50.">
+<meta property="og:description" content="Professional websites for UK tradespeople and small businesses — from £50, then £10 a month. Need a change? Just text us and it's updated.">
 <meta property="og:image" content="https://getpresented.co.uk/assets/images/og-image.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -29,7 +29,7 @@
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="getPresented. — Your business, online. Properly.">
-<meta name="twitter:description" content="Professional websites for UK tradespeople and small businesses. Built fast, priced fairly — from £50.">
+<meta name="twitter:description" content="Professional websites for UK tradespeople and small businesses — from £50, then £10 a month. Need a change? Just text us and it's updated.">
 <meta name="twitter:image" content="https://getpresented.co.uk/assets/images/og-image.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -409,6 +409,99 @@
   .talk-strip p{font-size:12.5px;color:#C9C2B0;}
   .talk-strip a.btn-primary{margin-left:auto;flex-shrink:0;font-size:12px;padding:10px 14px;}
 
+
+  /* ---------- TEXT US (message-edit demo) ---------- */
+  #text-us{padding-top:24px;}
+  .text-us-grid{display:grid;gap:28px;align-items:center;}
+  .text-us-copy h2{font-size:28px;margin:8px 0 14px;}
+  .text-us-copy .prose{margin-bottom:18px;}
+  .text-us-list{list-style:none;display:grid;gap:10px;font-size:14.5px;color:var(--ink-soft);}
+  .text-us-list li{padding-left:22px;position:relative;line-height:1.5;}
+  .text-us-list li::before{content:'';position:absolute;left:2px;top:7px;width:7px;height:12px;border:solid var(--green);border-width:0 2.5px 2.5px 0;transform:rotate(38deg) scale(.8);transform-origin:center;}
+  .text-us-list strong{color:var(--ink);font-weight:600;}
+
+  .chat{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:14px;
+    box-shadow:0 10px 30px rgba(33,29,23,0.12);
+    max-width:380px;width:100%;margin:0 auto;
+    overflow:hidden;
+  }
+  .chat-bar{
+    display:flex;align-items:center;gap:10px;
+    padding:11px 14px;
+    background:var(--ink);color:var(--paper);
+  }
+  .chat-avatar{
+    width:30px;height:30px;border-radius:50%;
+    background:var(--rust);color:var(--paper);
+    font-family:'Fraunces',serif;font-weight:700;font-size:15px;
+    display:flex;align-items:center;justify-content:center;flex-shrink:0;
+  }
+  .chat-name{font-size:13.5px;font-weight:600;line-height:1.2;}
+  .chat-sub{font-size:11px;color:#C9C2B0;}
+  .chat-body{padding:16px 12px 18px;display:flex;flex-direction:column;gap:9px;background:var(--paper);min-height:300px;}
+  .msg{
+    max-width:84%;
+    padding:9px 12px;
+    border-radius:12px;
+    font-size:13.5px;line-height:1.45;
+    border:1px solid var(--line);
+  }
+  .msg.you{align-self:flex-end;background:rgba(61,122,92,0.12);border-color:rgba(61,122,92,0.28);border-bottom-right-radius:3px;}
+  .msg.us{align-self:flex-start;background:var(--card);border-bottom-left-radius:3px;}
+  .msg .stamp{display:block;font-family:'Space Mono',monospace;font-size:9.5px;color:var(--ink-soft);margin-top:4px;text-align:right;}
+  .msg .live-link{color:var(--green);font-weight:600;text-decoration:underline;text-underline-offset:2px;}
+  .voice{display:flex;align-items:center;gap:9px;}
+  .voice-play{width:22px;height:22px;border-radius:50%;background:var(--green);flex-shrink:0;position:relative;}
+  .voice-play::after{content:'';position:absolute;left:8.5px;top:6px;border-left:7px solid var(--paper);border-top:5px solid transparent;border-bottom:5px solid transparent;}
+  .voice-wave{display:flex;align-items:center;gap:2px;height:20px;}
+  .voice-wave i{display:block;width:2.5px;border-radius:2px;background:var(--green);opacity:.7;}
+  .voice-time{font-family:'Space Mono',monospace;font-size:10px;color:var(--ink-soft);}
+  .photo-chip{
+    display:flex;align-items:center;gap:8px;
+    background:var(--paper);border:1px dashed var(--line);border-radius:6px;
+    padding:8px 10px;margin-bottom:6px;font-size:12px;color:var(--ink-soft);
+  }
+  .photo-chip svg{flex-shrink:0;}
+  .chat .msg{opacity:0;transform:translateY(8px);transition:opacity .45s ease, transform .45s ease;}
+  .chat.play .msg{opacity:1;transform:none;}
+  .chat.play .msg:nth-child(1){transition-delay:.2s;}
+  .chat.play .msg:nth-child(2){transition-delay:1.5s;}
+  .chat.play .msg:nth-child(3){transition-delay:3.0s;}
+  .chat.play .msg:nth-child(4){transition-delay:4.3s;}
+
+  /* ---------- PLANS ---------- */
+  #plans .section-head p{font-size:15px;color:var(--ink-soft);max-width:48ch;margin-top:10px;line-height:1.55;}
+  .build-line{
+    border:1px solid var(--line);border-left:4px solid var(--rust);
+    background:var(--card);border-radius:4px;
+    padding:16px 18px;margin-bottom:18px;
+    display:flex;flex-direction:column;gap:6px;
+  }
+  .build-line .big{font-family:'Fraunces',serif;font-weight:600;font-size:22px;}
+  .build-line .big .mono{font-size:13px;font-weight:400;color:var(--ink-soft);}
+  .build-line p{font-size:14px;color:var(--ink-soft);line-height:1.55;}
+  .plan-grid{display:grid;gap:16px;}
+  .plan{
+    border:1px solid var(--line);border-radius:4px;background:var(--card);
+    padding:22px 20px;display:flex;flex-direction:column;
+  }
+  .plan.fresh{border-color:var(--ink);box-shadow:0 4px 0 var(--ink);}
+  .plan h3{font-size:24px;}
+  .plan .tagline{font-size:13.5px;color:var(--ink-soft);margin:4px 0 14px;line-height:1.45;}
+  .plan .price{font-family:'Fraunces',serif;font-weight:600;font-size:34px;line-height:1;}
+  .plan .price span{font-family:'Space Mono',monospace;font-weight:400;font-size:12px;color:var(--ink-soft);}
+  .plan ul{list-style:none;margin:16px 0 20px;display:grid;gap:9px;font-size:14px;line-height:1.5;}
+  .plan li{padding-left:22px;position:relative;}
+  .plan li::before{content:'';position:absolute;left:2px;top:6px;width:6px;height:11px;border:solid var(--green);border-width:0 2.5px 2.5px 0;transform:rotate(38deg) scale(.8);}
+  .plan li.plus{font-weight:600;}
+  .plan .plan-cta{margin-top:auto;}
+  .plan .plan-cta a{display:block;text-align:center;}
+  .fine{font-size:12.5px;color:var(--ink-soft);line-height:1.55;margin-top:16px;max-width:62ch;}
+  .fine a{text-decoration:underline;text-underline-offset:3px;}
+
   /* ---------- FOOTER ---------- */
   footer{
     background:var(--ink);
@@ -476,6 +569,12 @@
 
     section{padding:72px 0;}
     .section-head h2{font-size:32px;}
+    .text-us-grid{grid-template-columns:1.05fr .95fr;gap:56px;}
+    .text-us-copy h2{font-size:36px;}
+    .plan-grid{grid-template-columns:1fr 1fr;gap:20px;}
+    .build-line{flex-direction:row;align-items:baseline;justify-content:space-between;gap:24px;}
+    .build-line p{max-width:44ch;}
+
     .checklist-card{padding:34px 38px;}
     .check-item{padding:18px 0;}
   }
@@ -486,6 +585,8 @@
     .demo-cursor.click{animation:none;}
     .result-card{transition:opacity .2s ease;transform:none;}
     .demo-btn{transition:opacity .2s ease;}
+    .chat .msg{opacity:1;transform:none;transition:none;}
+
   }
 </style>
 <script type="application/ld+json">
@@ -504,6 +605,8 @@
   ]
 }
 </script>
+<!-- Umami analytics (cookie-free) -->
+<script defer src="https://cloud.umami.is/script.js" data-website-id="384ded8d-dd29-4fef-8a4c-b1ef480efbe7" data-domains="getpresented.co.uk"></script>
 </head>
 <body>
 <!-- Cookie Consent (Meta Pixel) -->
@@ -556,7 +659,8 @@
     <a href="/" class="logo">getPresented<span>.</span></a>
     <div class="nav-links">
       <a href="#work">Work</a>
-      <a href="#process">How it works</a>
+      <a href="#text-us">Edits by text</a>
+      <a href="#plans">Pricing</a>
       <a href="/branding">Branding</a>
       <a href="/get-started">Get started</a>
     </div>
@@ -596,11 +700,11 @@
 
     <div class="hero-text">
       <div class="eyebrow" style="justify-content:center;">For tradespeople &amp; local shops</div>
-      <h1>A proper website,<br>without the <em>agency price tag.</em></h1>
-      <p>Built for plumbers, hairdressers, cafés, mechanics — anyone who needs customers to find them and trust them.</p>
+      <h1>A proper website.<br>Changes are <em>just a text away.</em></h1>
+      <p>Built for plumbers, hairdressers, cafés, mechanics — anyone who needs customers to find them and trust them. New prices, new photos, new hours? Message us and it's sorted.</p>
       <div class="hero-ctas">
         <a href="/get-started" class="btn-primary">Get started</a>
-        <a href="#work" class="btn-secondary">See real examples ↓</a>
+        <a href="#text-us" class="btn-secondary">See how texting works ↓</a>
       </div>
     </div>
   </div>
@@ -644,7 +748,7 @@
         <span class="biz">Casa Mayis</span>
         <span class="loc">Campeche, MX</span>
       </div>
-      <div class="postcard-quote">"My clients comment on my site all the time. I couldn't be happier!."</div>
+      <div class="postcard-quote">"My clients comment on my site all the time. I couldn't be happier!"</div>
     </a>
 
     <a href="https://mayatuya.com" target="_blank" rel="noopener" class="postcard">
@@ -669,8 +773,99 @@
 <section id="who">
   <div class="wrap">
     <div class="prose">
-      <p>If you fix it, sell it, cook it or cut it — chances are people are already searching for you on their phone. <strong>getPresented.</strong> builds the website that shows up when they do: your services, your prices, your hours, your real photos — nothing fake, nothing templated. <span class="price-mention">From as little as £50.</span></p>
+      <p>If you fix it, sell it, cook it or cut it — chances are people are already searching for you on their phone. <strong>getPresented.</strong> builds the website that shows up when they do: your services, your prices, your hours, your real photos — nothing fake, nothing templated. And when something changes, you don't log into anything — you just message us. <span class="price-mention">From as little as £50.</span></p>
     </div>
+  </div>
+</section>
+
+<section id="text-us">
+  <div class="wrap">
+    <div class="text-us-grid">
+      <div class="text-us-copy">
+        <div class="eyebrow">Keeping it up to date</div>
+        <h2>Text us. It's updated.</h2>
+        <p class="prose">No logins. No dashboards. No "I'll sort the website this weekend." When your hours, prices, menu or photos change, send us a WhatsApp — a message, a photo or a voice note — and we make the change for you.</p>
+        <ul class="text-us-list">
+          <li><strong>Photos and voice notes welcome.</strong> Say it however's quickest.</li>
+          <li><strong>A real person does it,</strong> and tells you when it's live.</li>
+          <li><strong>Same number you used to get started.</strong> Nothing new to learn.</li>
+        </ul>
+      </div>
+
+      <div class="chat" id="chat" role="img" aria-label="Example WhatsApp chat: a customer sends new opening hours, a photo and a voice note, and getPresented replies that the change is live.">
+        <div class="chat-bar">
+          <div class="chat-avatar">G</div>
+          <div>
+            <div class="chat-name">getPresented.</div>
+            <div class="chat-sub">online</div>
+          </div>
+        </div>
+        <div class="chat-body">
+          <div class="msg you">
+            New hours from Monday please — 8 till 6, closed Sundays
+            <span class="stamp">09:12</span>
+          </div>
+          <div class="msg you">
+            <div class="photo-chip"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#5C5648" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-8 8"/></svg><span>new-van.jpg</span></div>
+            <div class="voice"><div class="voice-play"></div><div class="voice-wave"><i style="height:8px"></i><i style="height:14px"></i><i style="height:10px"></i><i style="height:18px"></i><i style="height:12px"></i><i style="height:20px"></i><i style="height:9px"></i><i style="height:15px"></i><i style="height:19px"></i><i style="height:11px"></i><i style="height:16px"></i><i style="height:8px"></i><i style="height:13px"></i><i style="height:17px"></i><i style="height:10px"></i><i style="height:14px"></i><i style="height:9px"></i></div><span class="voice-time">0:07</span></div>
+            <span class="stamp">09:13</span>
+          </div>
+          <div class="msg us">
+            Got it ✅ Hours changed, van photo added to the homepage.
+            <span class="stamp">09:41</span>
+          </div>
+          <div class="msg us">
+            It's live — have a look: <span class="live-link">yourbusiness.co.uk</span> 👍
+            <span class="stamp">09:41</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="plans">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Pricing</div>
+      <h2>£50 to build. Then pick how much looking-after you want.</h2>
+      <p>One build price, one small monthly. No contract, no setup fees, no surprises.</p>
+    </div>
+
+    <div class="build-line">
+      <div class="big">From £50 <span class="mono">one-off, to build your site</span></div>
+      <p>Your first payment covers the build plus your first month, so £60 to start. After that it's just £10 a month.</p>
+    </div>
+
+    <div class="plan-grid">
+      <div class="plan">
+        <h3>Live</h3>
+        <p class="tagline">Your site online, looked after, with a couple of tweaks a month.</p>
+        <div class="price">£10<span> / month</span></div>
+        <ul>
+          <li>Hosting and your domain, handled</li>
+          <li>Secure, fast, findable on Google</li>
+          <li class="plus">2 changes a month, just by message</li>
+          <li>Cancel any time</li>
+        </ul>
+        <div class="plan-cta"><a href="/get-started" class="btn-primary">Build my site</a></div>
+      </div>
+
+      <div class="plan fresh">
+        <h3>Fresh</h3>
+        <p class="tagline">For businesses where prices, menus or hours keep changing.</p>
+        <div class="price">£20<span> / month</span></div>
+        <ul>
+          <li>Everything in Live</li>
+          <li class="plus">Unlimited everyday changes, by message</li>
+          <li>A yearly refresh of your flyer, card or menu</li>
+          <li>Cancel any time</li>
+        </ul>
+        <div class="plan-cta"><a href="https://buy.stripe.com/4gM8wOby23Mz5xq0o29EI0o" class="btn-secondary" onclick="if(window.fbq){fbq('track','InitiateCheckout');}">Build my site with Fresh</a></div>
+      </div>
+    </div>
+
+    <p class="fine">A "change" is one request, like new opening hours, a swapped photo or an updated price list. "Unlimited" on Fresh means everyday changes to your existing pages — new pages or a redesign are quoted separately. Your site is yours: if you ever leave, we'll hand over your domain for a one-off £17.</p>
   </div>
 </section>
 
@@ -707,7 +902,7 @@
         <div class="checkbox"></div>
         <div class="check-text">
           <strong>It goes live</strong>
-          <span>Findable on Google, ready for customers, yours to keep.</span>
+          <span>Findable on Google, ready for customers, yours to keep. After that, anything changes — just text us.</span>
         </div>
       </div>
     </div>
@@ -720,7 +915,7 @@
       <div class="eyebrow">Branding &amp; print</div>
       <h2>Need the brand to match the site?</h2>
     </div>
-    <p class="prose">Logos, business cards, social kits and menus — standalone add-ons with fixed prices, no quote needed. Buy online and we'll get started.</p>
+    <p class="prose">Logos, business cards, social kits and menus — standalone add-ons with fixed prices, no quote needed. Buy online and we'll get started. Or get the lot with your site: Properly Presented is a website plus your full identity for £99, then £10 a month, and it includes your first 3 months of Fresh.</p>
     <div style="margin-top:18px;">
       <a href="/branding" class="btn-secondary" style="display:inline-block;">See branding &amp; marketing →</a>
     </div>
@@ -880,6 +1075,17 @@
   } else {
     runDemoCycle();
   }
+
+  // Chat demo: plays once when it scrolls into view (instantly visible if motion is reduced).
+  (function(){
+    const chat = document.getElementById('chat');
+    if(!chat) return;
+    if(prefersReducedMotion || !('IntersectionObserver' in window)){ chat.classList.add('play'); return; }
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{ if(e.isIntersecting){ chat.classList.add('play'); io.disconnect(); } });
+    },{threshold:0.35});
+    io.observe(chat);
+  })();
 
 </script>
 
