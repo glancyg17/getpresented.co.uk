@@ -152,6 +152,7 @@ Every page has title, description, robots, canonical, Open Graph and Twitter tag
 6. Check `<div>` balance, anchors and mobile width after edits. Every page needs the Umami tag in `<head>` and (except 404, privacy policy) the consent/Pixel block.
 7. Don't add customer names, emails, phone numbers or screenshots of payments to the repo.
 8. Edit requests from clients follow `docs/edit-workflow.md`.
+9. **Writing style:** the copy must sound like one person talking, not a brochure. **No em dashes** in site copy (use a full stop, a comma, a colon or brackets). Page titles use ` | ` as the separator. Avoid "not X, it's Y" constructions, neat lists of three, and filler like "no surprises", "seamless" or "tailored". Short sentences, plain words, say what happens.
 
 ## 9. Marketing status (public-safe summary)
 

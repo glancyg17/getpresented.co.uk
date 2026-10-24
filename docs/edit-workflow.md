@@ -19,7 +19,7 @@ Status: **proposal, v1 (24 Oct 2026).** Items marked ⚠️ need a decision. Upd
 
 **Fresh fair use (internal, not published):** "unlimited" means reasonable. If a Fresh client sends more than about 4 requests a week for two months running, have a friendly chat about scope. Do not enforce mid-month or by surprise.
 
-**Public wording** already on the homepage: *"A 'change' is one request, like new opening hours, a swapped photo or an updated price list. 'Unlimited' on Fresh means everyday changes to your existing pages; new pages or a redesign are quoted separately."*
+**Public wording** already on the homepage: *"A 'change' is one request, like new opening hours, a swapped photo or an updated price list. 'Unlimited' on Fresh means everyday changes to your existing pages. New pages or a redesign are quoted separately."*
 
 ## 2. Turnaround ⚠️
 
