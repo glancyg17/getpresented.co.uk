@@ -91,7 +91,7 @@ solutions/                 Bespoke software page
 privacy-policy/            Discloses Meta Pixel + consent banner
 payment-confirmed/<slug>/  One page per Stripe link (see §6). /payment-confirmed/index.html is the generic £50 fallback
 404.html · sitemap.xml · robots.txt · llms.txt · CNAME · _config.yml
-assets/icons/ assets/images/   (kennedy, ekvanmobile, casamayis, mayatuya, og-image, logo)
+assets/icons/ assets/images/   (gallery: orbitvision, rfstrategic, kennedy, mayatuya, steviemacs, ekvan; plus og-image, logo)
 docs/                      Internal process docs (edit-workflow.md, client-site-CLAUDE-template.md)
 ```
 Each HTML page is self-contained (inline CSS/JS). Edit visible copy directly; no build step. Push to `main` → live in ~2 minutes.
@@ -163,7 +163,7 @@ Every page has title, description, robots, canonical, Open Graph and Twitter tag
 
 - [ ] **Response-time promise** for message edits (recommended: "by the end of the next working day"); then add to site.
 - [ ] **Privacy policy**: add a line on WhatsApp messages/photos/voice notes handled for edit requests (what is kept, for how long).
-- [ ] Carousel quotes for Kennedy and Maya Tuya are still placeholders; need real client words.
+- [ ] Carousel quotes for Kennedy and Maya Tuya are still placeholders; need real client words. Orbit Vision, RF Strategic and Stevie Macs cards have no quote yet (add only real ones). Casa Mayis is MX-only and is not in the UK gallery.
 - [ ] Add the optional monthly "pulse" message to Fresh once analytics exists; it isn't in the site copy yet.
 - [ ] Rebrand Gmail canned responses A–E; write Template F (consider a WhatsApp-format scope + payment message).
 - [ ] Clean up the stale 30-day trial setting on the £10 hosting price in Stripe (create a new price, don't edit the old one).
