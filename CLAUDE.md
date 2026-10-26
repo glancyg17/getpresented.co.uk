@@ -62,6 +62,7 @@ Properly Presented's Fresh months are a **service perk, not a billing change**: 
 Other: **domain transfer £17** if a client leaves (https://buy.stripe.com/bJe8wO1Xs0An7Fy9YC9EI08). No formal contract. Non-payment → site suspended.
 
 ### Pricing messaging rules
+- **Public pages talk price, not payment.** No "buy now", "pay and we'll be in touch", first-payment or checkout wording on the site; payment small print lives only at the point of payment (Stripe page, `/payment-confirmed/` pages). Internal billing mechanics stay in this file.
 - Lead with the bundle: *"£50 to build, then £10 a month to keep it live."*
 - Primary CTAs use benefit language ("Build my site"), no prices on buttons.
 - Ads say **"from £50"** (leaves room for £100–£350 custom jobs).
@@ -77,7 +78,7 @@ Ad / search / referral → getpresented.co.uk
 → /payment-confirmed/<product>/
 → build → handover message → client uses WhatsApp for changes
 ```
-Some products pay first (branding "Buy now", Simple Website + Fresh) and collect details on the confirmation page. Clients send logo/photos by WhatsApp or email; there is no upload form.
+Some products pay first (branding "Get" buttons, Simple Website + Fresh) and collect details on the confirmation page. Clients send logo/photos by WhatsApp or email; there is no upload form.
 
 ## 4. Repo map
 
