@@ -8,7 +8,7 @@ Status: **proposal, v1 (24 Oct 2026).** Items marked ⚠️ need a decision. Upd
 | Plan | Price | Message-edits |
 |---|---|---|
 | Live | £10/mo | 2 changes a month |
-| Fresh | £20/mo | Unlimited everyday changes, plus a yearly flyer/card/menu refresh |
+| Fresh | £20/mo | Unlimited everyday changes, monthly pulse message, seasonal nudges, yearly check-up + flyer/card/menu refresh (see `docs/fresh-service.md`) |
 | Properly Presented | £99 + £10/mo | Fresh-level service for the first 3 months, then Live (or upgrade to Fresh) |
 
 **A "change" is one request**: a message (or short back-and-forth) about one thing, such as new opening hours, a swapped photo, an updated price list or a seasonal banner. A few small related tweaks in one message count as one.

@@ -138,6 +138,27 @@
     h1{font-size:40px;}
     .lead{font-size:17px;}
   }
+
+  /* ---------- NAV: burger menu (mobile) ---------- */
+  .navrow{position:relative;}
+  .nav-right{display:flex;align-items:center;gap:10px;}
+  .nav-right .nav-cta{padding:10px 14px;}
+  .burger{width:42px;height:40px;border:1px solid var(--line);background:var(--card);border-radius:3px;display:inline-flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;cursor:pointer;padding:0;}
+  .burger span{display:block;width:18px;height:2px;background:var(--ink);border-radius:1px;transition:transform .2s ease,opacity .2s ease;}
+  .burger[aria-expanded="true"] span:nth-child(1){transform:translateY(6px) rotate(45deg);}
+  .burger[aria-expanded="true"] span:nth-child(2){opacity:0;}
+  .burger[aria-expanded="true"] span:nth-child(3){transform:translateY(-6px) rotate(-45deg);}
+  .nav-links{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;background:var(--paper);border-bottom:1px solid var(--line);box-shadow:0 14px 24px rgba(33,29,23,0.12);padding:6px 20px 14px;z-index:60;}
+  .nav-links.open{display:flex;}
+  .nav-links a{font-family:'Fraunces',serif;font-weight:600;font-size:20px;color:var(--ink);text-decoration:none;padding:14px 0;border-bottom:1px solid var(--line);}
+  .nav-links a:last-child{border-bottom:0;}
+  .nav-links a.nav-wa{font-family:'Space Mono',monospace;font-weight:400;font-size:13px;color:var(--rust-dark);}
+  @media(min-width:860px){
+    .burger{display:none;}
+    .nav-links,.nav-links.open{display:flex;position:static;flex-direction:row;align-items:center;gap:28px;background:none;border:0;box-shadow:none;padding:0;}
+    .nav-links a{font-family:'Inter',sans-serif;font-weight:400;font-size:14px;padding:0;border:0;}
+    .nav-links a.nav-wa{display:none;}
+  }
 </style>
 <!-- Umami analytics (cookie-free) -->
 <script defer src="https://cloud.umami.is/script.js" data-website-id="384ded8d-dd29-4fef-8a4c-b1ef480efbe7" data-domains="getpresented.co.uk"></script>
@@ -147,6 +168,18 @@
 <nav>
   <div class="navrow">
     <a href="/" class="logo">getPresented<span>.</span></a>
+    <div class="nav-links" id="nav-menu">
+      <a href="/#work">Work</a>
+      <a href="/#text-us">Edits by text</a>
+      <a href="/#plans">Pricing</a>
+      <a href="/branding/">Branding</a>
+      <a href="/solutions/">Custom builds</a>
+      <a href="https://wa.me/447301222435" class="nav-wa" target="_blank" rel="noopener" onclick="if(window.fbq){fbq('track','Lead');}">Message us on WhatsApp</a>
+    </div>
+    <div class="nav-right">
+      <a href="/get-started" class="nav-cta">Build my site</a>
+      <button class="burger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="nav-menu"><span></span><span></span><span></span></button>
+    </div>
   </div>
 </nav>
 
@@ -172,5 +205,17 @@
   </div>
 </footer>
 
+<script>
+(function(){
+  var b=document.querySelector('.burger'),m=document.getElementById('nav-menu');
+  if(!b||!m)return;
+  function set(o){m.classList.toggle('open',o);b.setAttribute('aria-expanded',o);}
+  b.addEventListener('click',function(e){e.stopPropagation();set(!m.classList.contains('open'));});
+  m.addEventListener('click',function(e){if(e.target.closest('a'))set(false);});
+  document.addEventListener('click',function(e){if(!e.target.closest('nav'))set(false);});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')set(false);});
+  window.addEventListener('resize',function(){if(window.innerWidth>=860)set(false);});
+})();
+</script>
 </body>
 </html>

@@ -10,7 +10,7 @@ Get Presented. is a UK-based web design service that builds simple, fast, mobile
 
 - Static website build: from £50 one-time
 - Hosting & maintenance: £10/month, with your first month taken at checkout alongside the build fee
-- Changes by message: send a WhatsApp message, photo or voice note and the site is updated. Live plan (£10/month) includes 2 changes a month; optional Fresh plan (£20/month) includes unlimited everyday changes
+- Changes by message: send a WhatsApp message, photo or voice note and the site is updated. Live plan (£10/month) includes 2 changes a month; optional Fresh plan (£20/month) includes unlimited everyday changes, a monthly plain-English "how your site did" message, seasonal check-ins, and a yearly site check-up plus flyer/card/menu refresh
 - Domain registration and setup handled on the client's behalf
 - Contact form, business listing details, services, prices, and hours included as standard
 - Branding & marketing add-ons: standalone, fixed-price, buyable online at /branding/: Starter Identity (logo, palette, type, business card) from £50, Social Identity (WhatsApp/social/flyer/QR kit) £50, Full Identity £75, Menu Design £35. Also available bundled with a new site build.
