@@ -89,7 +89,8 @@ get-started/index.html     Persuasion page
 get-started/details/       Intake form (FormSubmit)
 thank-you-enquiry/         Fires Lead
 solutions/                 Bespoke software page
-privacy-policy/            Discloses Meta Pixel + consent banner
+privacy-policy/            Discloses Meta Pixel + consent banner, WhatsApp edit content
+terms/                     Terms of service (plain English; Scots law; review annually)
 payment-confirmed/<slug>/  One page per Stripe link (see §6). /payment-confirmed/index.html is the generic £50 fallback
 404.html · sitemap.xml · robots.txt · llms.txt · CNAME · _config.yml
 assets/icons/ assets/images/   (gallery: orbitvision, rfstrategic, kennedy, mayatuya, steviemacs, ekvan; plus og-image, logo)
@@ -161,6 +162,9 @@ Every page has title, description, robots, canonical, Open Graph and Twitter tag
 - **Meta platform notes:** detailed interest targeting is gone (Advantage+ Audience only); learning phase needs roughly 50 conversions/week on the optimisation event, so small always-on budgets stay "Learning limited".
 
 ## 10. Open items
+
+- [ ] **Terms of service drafted (26 Oct 2026), not lawyer-reviewed.** Check governing law (Scotland assumed), add trader name/address, then in Stripe set the Terms of service URL to `https://getpresented.co.uk/terms/` and require acceptance on payment links.
+- [ ] Privacy policy: when the Fresh pulse goes live, add Cloudflare Web Analytics and Search Console for client sites.
 
 - [ ] **Response-time promise** for message edits (recommended: "by the end of the next working day"); then add to site.
 - [ ] **Privacy policy**: add a line on WhatsApp messages/photos/voice notes handled for edit requests (what is kept, for how long).
