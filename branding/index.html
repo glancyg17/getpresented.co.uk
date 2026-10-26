@@ -147,6 +147,45 @@
   }
   .buy-btn:active{transform:translateY(2px);box-shadow:none;}
 
+
+  /* ---------- BRAND FEATURES (image + overlay card) ---------- */
+  .brand-features{display:flex;flex-direction:column;gap:34px;}
+  .bf{margin:0;}
+  .bf-media{position:relative;border:1px solid var(--line);border-radius:8px;overflow:hidden;background:var(--card);}
+  .bf-media img{width:100%;height:auto;aspect-ratio:1200/833;object-fit:cover;}
+  .bf-card{padding:22px 20px 24px;border-top:1px solid var(--line);background:var(--card);}
+  .bf-tag{font-family:'Space Mono',monospace;font-size:9.5px;letter-spacing:0.08em;text-transform:uppercase;color:var(--rust);margin-bottom:8px;}
+  .bf-card h3{font-size:22px;margin-bottom:4px;}
+  .bf-price{font-family:'Space Mono',monospace;font-size:14px;color:var(--rust);margin-bottom:12px;}
+  .bf-lead{font-size:13.5px;color:var(--ink-soft);line-height:1.55;margin-bottom:14px;}
+  .bf-save{color:var(--ink-soft);font-size:11.5px;}
+  .bf-list{list-style:none;display:flex;flex-direction:column;gap:7px;margin-bottom:18px;}
+  .bf-list li{font-size:13.5px;color:var(--ink);line-height:1.4;padding-left:18px;position:relative;}
+  .bf-list li::before{content:'';position:absolute;left:0;top:0.5em;width:7px;height:7px;border-radius:50%;background:var(--green);}
+  .bf-chips{list-style:none;display:flex;flex-wrap:wrap;gap:6px;margin-bottom:18px;}
+  .bf-chips li{font-family:'Space Mono',monospace;font-size:10.5px;border:1px solid var(--line);background:var(--paper);border-radius:20px;padding:5px 10px;color:var(--ink-soft);}
+  .bf figcaption{font-family:'Space Mono',monospace;font-size:10.5px;color:var(--ink-soft);margin-top:8px;letter-spacing:0.02em;}
+  .menu-card{margin-top:34px;display:flex;flex-direction:column;gap:14px;}
+  .menu-card .contents{margin-bottom:6px;}
+  @media(min-width:1040px){
+    .bf-card{position:absolute;border:1px solid var(--line);border-radius:8px;box-shadow:0 14px 34px rgba(33,29,23,0.16);padding:22px 22px 24px;}
+    .bf-card h3{font-size:24px;}
+    .bf--starter .bf-card{top:50%;right:3%;transform:translateY(-50%);width:31%;}
+    .bf--social .bf-card{top:50%;left:2.5%;transform:translateY(-50%);width:24.5%;padding:18px 16px 20px;}
+    .bf--social .bf-card h3{font-size:21px;}
+    .bf--social .bf-list li{font-size:12.5px;}
+    .bf--full .bf-card{left:3.5%;bottom:3.5%;width:57%;display:grid;grid-template-columns:1fr auto;column-gap:22px;align-items:end;padding:16px 22px 18px;}
+    .bf--full .bf-card .bf-main{min-width:0;}
+    .bf--full .bf-card h3{font-size:24px;margin-bottom:2px;}
+    .bf--full .bf-chips{margin-bottom:0;}
+    .bf--full .bf-card .bf-cta{width:210px;}
+    .bf--full .bf-price{margin-bottom:10px;}
+    .bf--full .bf-card .bf-tag{margin-bottom:6px;}
+    .menu-card{flex-direction:row;align-items:center;justify-content:space-between;gap:28px;padding:22px 26px;}
+    .menu-card .menu-copy{max-width:60ch;}
+    .menu-card .cta-row{width:230px;flex-shrink:0;margin-top:0;}
+  }
+
   /* ---------- BUNDLES ---------- */
   .bundles{border-top:1px solid var(--line);}
   .bundle-grid{display:grid;grid-template-columns:1fr;gap:16px;}
@@ -347,45 +386,84 @@
       <p>Fixed price, delivered fast.</p>
     </div>
 
-    <div class="product-grid">
+    <div class="brand-features">
 
-      <div class="product-card">
-        <h3>Starter Identity</h3>
-        <div class="price">£50</div>
-        <p class="contents">Logo, colour palette, typography and favicon, plus a matching business card. Everything you need to look the part, delivered fast.</p>
-        <div class="cta-row">
-          <a href="https://buy.stripe.com/00w5kCfOi3Mz1ha2wa9EI0h" class="buy-btn" onclick="if(window.fbq){fbq('track','InitiateCheckout');}">Get Starter Identity</a>
+      <figure class="bf bf--full">
+        <div class="bf-media">
+          <img src="/assets/images/brand-full-640.jpg" srcset="/assets/images/brand-full-640.jpg 640w, /assets/images/brand-full.jpg 1200w" sizes="(min-width:1220px) 1140px, calc(100vw - 40px)" width="1200" height="833" alt="Full brand identity flat-lay: logo card, colour palette, typography, business cards, a WhatsApp Business profile on a phone, an email signature, social banners, a flyer and a QR code." loading="eager" decoding="async">
+          <div class="bf-card">
+            <div class="bf-main">
+              <div class="bf-tag">Best value · Starter + Social</div>
+              <h3>Full Identity</h3>
+              <div class="bf-price">£75 <span class="bf-save">· £25 less than buying both separately</span></div>
+              <ul class="bf-chips">
+                <li>Logo</li><li>Palette</li><li>Typography</li><li>Favicon</li><li>Business card</li><li>WhatsApp assets</li><li>Email signature</li><li>Social banners</li><li>Flyer</li><li>QR code</li>
+              </ul>
+            </div>
+            <div class="bf-cta">
+              <a href="https://buy.stripe.com/eVq5kC59E5UH3pi4Ei9EI0j" class="buy-btn" onclick="if(window.fbq){fbq('track','InitiateCheckout');}">Get Full Identity</a>
+            </div>
+          </div>
         </div>
-      </div>
+        <figcaption>Example identity, shown for getPresented.</figcaption>
+      </figure>
 
-      <div class="product-card">
-        <h3>Social Identity</h3>
-        <div class="price">£50</div>
-        <p class="contents">WhatsApp Business profile assets, email signature, social media images and banners, a flyer and a branded QR code. Your whole online presence, sorted.</p>
-        <div class="cta-row">
-          <a href="https://buy.stripe.com/bJe6oG45Adn92le9YC9EI0i" class="buy-btn" onclick="if(window.fbq){fbq('track','InitiateCheckout');}">Get Social Identity</a>
+      <figure class="bf bf--starter">
+        <div class="bf-media">
+          <img src="/assets/images/brand-starter-640.jpg" srcset="/assets/images/brand-starter-640.jpg 640w, /assets/images/brand-starter.jpg 1200w" sizes="(min-width:1220px) 1140px, calc(100vw - 40px)" width="1200" height="833" alt="Starter identity flat-lay: a logo card, brand colour palette, typography specimen, favicon, browser tab and a business card front and back." loading="lazy" decoding="async">
+          <div class="bf-card">
+            <h3>Starter Identity</h3>
+            <div class="bf-price">£50</div>
+            <p class="bf-lead">Everything you need to look the part, delivered fast.</p>
+            <ul class="bf-list">
+              <li>Logo</li>
+              <li>Colour palette</li>
+              <li>Typography pairing</li>
+              <li>Favicon</li>
+              <li>Matching business card</li>
+            </ul>
+            <div class="cta-row">
+              <a href="https://buy.stripe.com/00w5kCfOi3Mz1ha2wa9EI0h" class="buy-btn" onclick="if(window.fbq){fbq('track','InitiateCheckout');}">Get Starter Identity</a>
+            </div>
+          </div>
         </div>
-      </div>
+        <figcaption>Example identity, shown for getPresented.</figcaption>
+      </figure>
 
-      <div class="product-card">
-        <h3>Full Identity</h3>
-        <div class="price">£75</div>
-        <p class="contents">Starter Identity and Social Identity together: logo, business card, WhatsApp assets, email signature, social banners, flyer and QR code. The complete brand, one price.</p>
-        <div class="cta-row">
-          <a href="https://buy.stripe.com/eVq5kC59E5UH3pi4Ei9EI0j" class="buy-btn" onclick="if(window.fbq){fbq('track','InitiateCheckout');}">Get Full Identity</a>
+      <figure class="bf bf--social">
+        <div class="bf-media">
+          <img src="/assets/images/brand-social-640.jpg" srcset="/assets/images/brand-social-640.jpg 640w, /assets/images/brand-social.jpg 1200w" sizes="(min-width:1220px) 1140px, calc(100vw - 40px)" width="1200" height="833" alt="Social identity flat-lay: a WhatsApp Business profile on a phone, an email signature, a Facebook cover, an Instagram post, a flyer and a branded QR code." loading="lazy" decoding="async">
+          <div class="bf-card">
+            <h3>Social Identity</h3>
+            <div class="bf-price">£50</div>
+            <p class="bf-lead">Your whole online presence, sorted.</p>
+            <ul class="bf-list">
+              <li>WhatsApp Business assets</li>
+              <li>Email signature</li>
+              <li>Social images &amp; banners</li>
+              <li>Flyer</li>
+              <li>Branded QR code</li>
+            </ul>
+            <div class="cta-row">
+              <a href="https://buy.stripe.com/bJe6oG45Adn92le9YC9EI0i" class="buy-btn" onclick="if(window.fbq){fbq('track','InitiateCheckout');}">Get Social Identity</a>
+            </div>
+          </div>
         </div>
-      </div>
+        <figcaption>Example identity, shown for getPresented.</figcaption>
+      </figure>
 
-      <div class="product-card">
-        <h3>Menu Design</h3>
-        <div class="price">£35</div>
-        <p class="contents">A clean, print-ready menu design for your business. Any size, one flat price.</p>
+    </div>
+
+      <div class="product-card menu-card">
+        <div class="menu-copy">
+          <h3>Menu Design</h3>
+          <div class="price">£35</div>
+          <p class="contents">A clean, print-ready menu design for your business. Any size, one flat price.</p>
+        </div>
         <div class="cta-row">
           <a href="https://buy.stripe.com/8x214mgSmgzlbVO2wa9EI0k" class="buy-btn" onclick="if(window.fbq){fbq('track','InitiateCheckout');}">Get Menu Design</a>
         </div>
       </div>
-
-    </div>
   </div>
 </section>
 

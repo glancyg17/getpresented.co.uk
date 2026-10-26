@@ -306,6 +306,23 @@
   .section-head{margin-bottom:22px;}
   .section-head h2{font-size:25px;margin-top:8px;}
 
+
+  /* ---------- BRANDING TEASER (image + overlay) ---------- */
+  .bt-media{position:relative;border:1px solid var(--line);border-radius:8px;overflow:hidden;background:var(--card);}
+  .bt-media img{width:100%;height:auto;aspect-ratio:1200/833;object-fit:cover;}
+  .bt-card{padding:22px 20px 24px;border-top:1px solid var(--line);background:var(--card);}
+  .bt-card .section-head{margin-bottom:12px;}
+  .bt-card .prose{font-size:14.5px;line-height:1.6;}
+  .bt-caption{font-family:'Space Mono',monospace;font-size:10.5px;color:var(--ink-soft);margin-top:8px;letter-spacing:0.02em;}
+  @media(min-width:1040px){
+    .bt-card{position:absolute;left:3.5%;bottom:3.5%;width:62%;border:1px solid var(--line);border-radius:8px;box-shadow:0 14px 34px rgba(33,29,23,0.16);display:grid;grid-template-columns:1fr 1.15fr;grid-template-areas:"head prose" "btn prose";column-gap:26px;row-gap:14px;align-items:center;padding:18px 24px;}
+    .bt-card .section-head{grid-area:head;margin-bottom:0;align-self:end;}
+    .bt-card .section-head h2{font-size:24px;}
+    .bt-copy{display:contents;}
+    .bt-prose{grid-area:prose;font-size:14px;line-height:1.55;}
+    .bt-btn{grid-area:btn;margin-top:0 !important;align-self:start;}
+  }
+
   /* ---------- POSTCARD TAG (system built on top of the site) ---------- */
   .postcard-tag{
     font-family:'Space Mono',monospace;
@@ -942,14 +959,22 @@
 
 <section id="branding-teaser">
   <div class="wrap">
-    <div class="section-head">
-      <div class="eyebrow">Branding &amp; print</div>
-      <h2>Need the brand to match the site?</h2>
+    <div class="bt-media">
+      <img src="/assets/images/brand-full-640.jpg" srcset="/assets/images/brand-full-640.jpg 640w, /assets/images/brand-full.jpg 1200w" sizes="(min-width:1220px) 1140px, calc(100vw - 40px)" width="1200" height="833" alt="Full brand identity flat-lay: logo card, colour palette, typography, business cards, a WhatsApp Business profile on a phone, an email signature, social banners, a flyer and a QR code." loading="lazy" decoding="async">
+      <div class="bt-card">
+        <div class="section-head">
+          <div class="eyebrow">Branding &amp; print</div>
+          <h2>Need the brand to match the site?</h2>
+        </div>
+        <div class="bt-copy">
+          <p class="prose bt-prose">Logos, business cards, social kits and menus: everything that makes your business look as good on WhatsApp and in print as it does online. Or have the lot done together with your site, with Properly Presented.</p>
+          <div class="bt-btn" style="margin-top:14px;">
+            <a href="/branding" class="btn-secondary" style="display:inline-block;">See branding &amp; marketing →</a>
+          </div>
+        </div>
+      </div>
     </div>
-    <p class="prose">Logos, business cards, social kits and menus: everything that makes your business look as good on WhatsApp and in print as it does online. Or have the lot done together with your site, with Properly Presented.</p>
-    <div style="margin-top:18px;">
-      <a href="/branding" class="btn-secondary" style="display:inline-block;">See branding &amp; marketing →</a>
-    </div>
+    <p class="bt-caption">Example identity, shown for getPresented.</p>
   </div>
 </section>
 
