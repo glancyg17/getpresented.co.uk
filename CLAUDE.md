@@ -84,7 +84,7 @@ Some products pay first (branding "Get" buttons, Simple Website + Fresh) and col
 
 ```
 index.html                 Homepage: hero demo, work carousel, "Text us" chat demo, plans, process, branding teaser (Full Identity collage with overlay card), solutions teaser
-branding/index.html        Standalone identity products (collage image with overlay card + buy button; Menu Design is a plain card until it has an image) + site bundles (WhatsApp ask)
+branding/index.html        Standalone identity products (collage image with overlay card + buy button; Menu Design uses a side-by-side image + card block (portrait image, no overlay space)) + site bundles (WhatsApp ask)
 get-started/index.html     Persuasion page
 get-started/details/       Intake form (FormSubmit)
 thank-you-enquiry/         Fires Lead
@@ -93,7 +93,7 @@ privacy-policy/            Discloses Meta Pixel + consent banner, WhatsApp edit 
 terms/                     Terms of service (plain English; Scots law; review annually)
 payment-confirmed/<slug>/  One page per Stripe link (see §6). /payment-confirmed/index.html is the generic £50 fallback
 404.html · sitemap.xml · robots.txt · llms.txt · CNAME · _config.yml
-assets/icons/ assets/images/   (gallery: orbitvision, rfstrategic, kennedy, mayatuya, steviemacs, ekvan; plus og-image, logo; branding collages: brand-full, brand-starter, brand-social, each with a `-640` variant for mobile)
+assets/icons/ assets/images/   (gallery: orbitvision, rfstrategic, kennedy, mayatuya, steviemacs, ekvan; plus og-image, logo; branding collages: brand-full, brand-starter, brand-social, brand-menu, each with a `-640` variant for mobile)
 docs/                      Internal process docs (edit-workflow.md, client-site-CLAUDE-template.md)
 ```
 Each HTML page is self-contained (inline CSS/JS). Edit visible copy directly; no build step. Push to `main` → live in ~2 minutes.

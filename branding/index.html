@@ -165,8 +165,8 @@
   .bf-chips{list-style:none;display:flex;flex-wrap:wrap;gap:6px;margin-bottom:18px;}
   .bf-chips li{font-family:'Space Mono',monospace;font-size:10.5px;border:1px solid var(--line);background:var(--paper);border-radius:20px;padding:5px 10px;color:var(--ink-soft);}
   .bf figcaption{font-family:'Space Mono',monospace;font-size:10.5px;color:var(--ink-soft);margin-top:8px;letter-spacing:0.02em;}
-  .menu-card{margin-top:34px;display:flex;flex-direction:column;gap:14px;}
-  .menu-card .contents{margin-bottom:6px;}
+  .bf-split img{max-width:420px;margin:0 auto;aspect-ratio:960/1280;}
+  .bf-split{background:var(--paper);}
   @media(min-width:1040px){
     .bf-card{position:absolute;border:1px solid var(--line);border-radius:8px;box-shadow:0 14px 34px rgba(33,29,23,0.16);padding:22px 22px 24px;}
     .bf-card h3{font-size:24px;}
@@ -181,9 +181,10 @@
     .bf--full .bf-card .bf-cta{width:210px;}
     .bf--full .bf-price{margin-bottom:10px;}
     .bf--full .bf-card .bf-tag{margin-bottom:6px;}
-    .menu-card{flex-direction:row;align-items:center;justify-content:space-between;gap:28px;padding:22px 26px;}
-    .menu-card .menu-copy{max-width:60ch;}
-    .menu-card .cta-row{width:230px;flex-shrink:0;margin-top:0;}
+    .bf-split{display:grid;grid-template-columns:minmax(0,460px) 1fr;align-items:center;gap:0;}
+    .bf-split img{max-width:none;margin:0;width:100%;aspect-ratio:960/1280;}
+    .bf-split .bf-card{position:static;transform:none;border:0;box-shadow:none;border-radius:0;background:transparent;width:auto;max-width:420px;margin:0 auto;padding:28px;}
+    .bf-split .bf-card h3{font-size:28px;}
   }
 
   /* ---------- BUNDLES ---------- */
@@ -452,18 +453,28 @@
         <figcaption>Example identity, shown for getPresented.</figcaption>
       </figure>
 
+      <figure class="bf bf--menu">
+        <div class="bf-media bf-split">
+          <img src="/assets/images/brand-menu-560.jpg" srcset="/assets/images/brand-menu-560.jpg 560w, /assets/images/brand-menu.jpg 960w" sizes="(min-width:1040px) 460px, min(420px, calc(100vw - 40px))" width="960" height="1280" alt="Print-ready menu design for a fictional café, The Corner Cup: a two-column A4 menu with a matching folded table card, a pencil and a coffee." loading="lazy" decoding="async">
+          <div class="bf-card">
+            <h3>Menu Design</h3>
+            <div class="bf-price">£35</div>
+            <p class="bf-lead">A clean, print-ready menu design for your business. Any size, one flat price.</p>
+            <ul class="bf-list">
+              <li>Clear sections, easy to read at a glance</li>
+              <li>Laid out around your items and prices</li>
+              <li>Print-ready file</li>
+            </ul>
+            <div class="cta-row">
+              <a href="https://buy.stripe.com/8x214mgSmgzlbVO2wa9EI0k" class="buy-btn" onclick="if(window.fbq){fbq('track','InitiateCheckout');}">Get Menu Design</a>
+            </div>
+          </div>
+        </div>
+        <figcaption>Example menu for a fictional café, designed by getPresented.</figcaption>
+      </figure>
+
     </div>
 
-      <div class="product-card menu-card">
-        <div class="menu-copy">
-          <h3>Menu Design</h3>
-          <div class="price">£35</div>
-          <p class="contents">A clean, print-ready menu design for your business. Any size, one flat price.</p>
-        </div>
-        <div class="cta-row">
-          <a href="https://buy.stripe.com/8x214mgSmgzlbVO2wa9EI0k" class="buy-btn" onclick="if(window.fbq){fbq('track','InitiateCheckout');}">Get Menu Design</a>
-        </div>
-      </div>
   </div>
 </section>
 
