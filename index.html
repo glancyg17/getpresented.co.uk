@@ -264,6 +264,7 @@
     transition:box-shadow .18s ease, transform .18s ease;
   }
   .postcard:hover{box-shadow:0 12px 30px rgba(33,29,23,0.18);}
+  .dot{transition:background .2s ease;}
   .postcard:active{transform:scale(0.98);}
   .postcard:nth-child(odd){transform:rotate(-1.6deg);}
   .postcard:nth-child(even){transform:rotate(1.3deg);}
@@ -809,10 +810,22 @@
       </div>
       <div class="postcard-quote">"Customers find us on Google now. That never happened before."</div><!-- TEMP quote, replace with Google review -->
     </a>
+
+    <!-- L.D Construction: added 30 Oct 2026. Quote is a real Google review from Lewis (client-approved; "There" corrected to "Their"). -->
+    <a href="https://ldconstruction.trade" target="_blank" rel="noopener" class="postcard">
+      <div class="pin"></div>
+      <img src="/assets/images/ldconstruction.jpg" alt="L.D Construction website" loading="lazy" style="width:100%;aspect-ratio:5/4;object-fit:cover;border-radius:1px;display:block;">
+      <div class="postcard-cap">
+        <span class="biz">L.D Construction</span>
+        <span class="loc">Bellshill</span>
+      </div>
+      <div class="postcard-quote">"Highly recommended! Very good and fast at what they do, getPresented has really helped my business in many ways. Their work is second to none."</div><!-- Google review (Lewis, L.D Construction) -->
+    </a>
   </div><!-- /deck -->
   </div><!-- /deck-wrap -->
-  <div class="deck-dots">
+  <div class="deck-dots" id="deck-dots" aria-hidden="true">
     <div class="dot active"></div>
+    <div class="dot"></div>
     <div class="dot"></div>
     <div class="dot"></div>
     <div class="dot"></div>
@@ -1144,6 +1157,69 @@
     io.observe(chat);
   })();
 
+</script>
+
+<script>
+// Gallery: random order on every page load, gentle auto-cycle, live dots.
+// Auto-cycle pauses on touch/hover/focus/manual scroll and when off-screen;
+// it never runs for visitors who prefer reduced motion.
+(function(){
+  var deck=document.getElementById('deck'),dotsBox=document.getElementById('deck-dots');
+  if(!deck)return;
+  var cards=Array.prototype.slice.call(deck.children).filter(function(c){return c.classList.contains('postcard');});
+  if(cards.length<2)return;
+
+  // Fisher-Yates shuffle, re-append in new order
+  for(var i=cards.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=cards[i];cards[i]=cards[j];cards[j]=t;}
+  cards.forEach(function(c){deck.appendChild(c);});
+  deck.scrollLeft=0;
+
+  // Dots match the number of cards
+  var dots=[];
+  if(dotsBox){
+    dotsBox.innerHTML='';
+    cards.forEach(function(){var d=document.createElement('div');d.className='dot';dotsBox.appendChild(d);dots.push(d);});
+  }
+
+  function targetLeft(card){
+    var dr=deck.getBoundingClientRect(),cr=card.getBoundingClientRect();
+    var center=getComputedStyle(card).scrollSnapAlign.indexOf('center')>-1;
+    var offset=center?(deck.clientWidth-cr.width)/2:parseFloat(getComputedStyle(deck).paddingLeft)||0;
+    return deck.scrollLeft+(cr.left-dr.left)-offset;
+  }
+  function nearest(){
+    var best=0,bestDist=Infinity,sl=deck.scrollLeft;
+    cards.forEach(function(c,k){var d=Math.abs(targetLeft(c)-sl);if(d<bestDist){bestDist=d;best=k;}});
+    return best;
+  }
+  function paintDots(){var n=nearest();dots.forEach(function(d,k){d.classList.toggle('active',k===n);});}
+  var ticking=false;
+  deck.addEventListener('scroll',function(){if(ticking)return;ticking=true;requestAnimationFrame(function(){ticking=false;paintDots();});},{passive:true});
+  window.addEventListener('resize',paintDots);
+  paintDots();
+
+  // Auto-cycle
+  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+  var timer=null,paused=false,visible=false;
+  function next(){
+    if(paused||!visible)return;
+    var n=(nearest()+1)%cards.length;
+    deck.scrollTo({left:targetLeft(cards[n]),behavior:'smooth'});
+  }
+  function start(){if(!timer)timer=setInterval(next,4500);}
+  function stop(){clearInterval(timer);timer=null;}
+  function hold(ms){paused=true;clearTimeout(hold.t);hold.t=setTimeout(function(){paused=false;},ms);}
+  ['touchstart','pointerdown','wheel','keydown'].forEach(function(ev){deck.addEventListener(ev,function(){hold(9000);},{passive:true});});
+  deck.addEventListener('mouseenter',function(){paused=true;clearTimeout(hold.t);});
+  deck.addEventListener('mouseleave',function(){hold(1500);});
+  deck.addEventListener('focusin',function(){paused=true;clearTimeout(hold.t);});
+  deck.addEventListener('focusout',function(){hold(1500);});
+  document.addEventListener('visibilitychange',function(){document.hidden?stop():start();});
+  if('IntersectionObserver' in window){
+    new IntersectionObserver(function(e){visible=e[0].isIntersecting;},{threshold:0.5}).observe(deck);
+  }else{visible=true;}
+  start();
+})();
 </script>
 
 <script>
